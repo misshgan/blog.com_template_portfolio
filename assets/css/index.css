@@ -25,6 +25,10 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "ghost/pagination.css";
 @import "ghost/comments.css";
 
+/* Settings */ 
+
+@import "settings/_settings";
+
 
 
 /* Main - Your styles here! Edit below
