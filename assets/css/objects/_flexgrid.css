@@ -1,0 +1,34 @@
+/* Grid-sytem */
+.wrapper {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: var(--global-max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container-fixed, .container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  padding-right: 2rem;
+  padding-left: 2rem;
+
+  &--home {
+    padding-top: clamp(6rem, 3.955rem + 4.545vw, 10.5rem);
+  }
+
+  &--categories {
+    padding-top: clamp(2rem, 1.629rem + 0.952vw, 3rem);
+    padding-bottom: clamp(10rem, 7.4rem + 6.667vw, 17rem);
+  }
+
+  &--breadcrumbs {
+    padding-top: 3rem;
+  }
+
+  &--error {
+  }
+}

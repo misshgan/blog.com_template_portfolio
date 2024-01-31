@@ -1,0 +1,44 @@
+/* Html & Body */
+html,
+body {
+    font-size: var(--font-size-base);
+    font-family: var(--font-body);
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-txt-size-adjust: 100%;
+    -ms-txt-size-adjust: 100%;
+
+    -webkit-hyphens: var(--global-hyphens);
+    -ms-hyphens: var(--global-hyphens);
+    hyphens: var(--global-hyphens);
+
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--color-body);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+main {
+    position: relative;
+}
+
+@media (print), (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

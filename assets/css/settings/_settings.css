@@ -28,10 +28,11 @@
     --color-gold: hsl(51 100% 50%);
 
     /* Current theme colors */
-    --color-light-gray: hsla(0, 0%, 96%, 1);
-    --color-dark-gray: hsla(0, 0%, 51%, 1);
-    --color-lighter-black: hsla(0, 0%, 16%, 1);
-    --color-full-black: hsla(0, 0%, 9%, 1);
+    --color-black: hsla(0, 0%, 7%, 1);
+    --color-white: hsla(0, 0%, 99%, 1);
+    --color-gray: hsla(0, 0%, 52%, 1);
+    
+    --color-font-main: var(--color-black);
 
     /* Social colors */
     --color-facebook: #4267b2;
@@ -47,7 +48,7 @@
     /* Typography */
     --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
         Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    --font-default: 'Bricolage Grotesque', sans-serif, var(--font-system);
+    --font-default: 'Lato', sans-serif, var(--font-system);
     --font-mono: Consolas, Monaco, monospace;
     --font-body: var(--font-default), var(--font-system);
     --font-headings: var(--font-default), var(--font-system);
