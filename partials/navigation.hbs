@@ -1,4 +1,4 @@
-<ul class="navigation{{#if isSecondary}} secondary{{/if}}">
+<ul class="navigation{{#if isSecondary}} secondary{{/if}} flex items-center">
   {{#foreach navigation}}
     <li class="{{link_class for=(url) class=(concat "nav-" slug)}}{{#match label.[0] "-"}} is-subitem{{/match}}" 
       data-label="{{label}}" data-length="{{label.length}}">
