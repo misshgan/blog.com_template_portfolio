@@ -1,0 +1,9 @@
+.navigation {
+    list-style-type: none;
+    column-gap: 4rem;
+
+    li {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+}

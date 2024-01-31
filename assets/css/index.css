@@ -9,6 +9,8 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* ---------------------------------------------------------- */
 
 /* Theme components */
+@import 'components/_header';
+@import 'components/_navigation';
 
 /* Default components */
 @import 'default/_badge';
@@ -19,6 +21,8 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* Elements */ 
 @import 'elements/_body';
 @import 'elements/_image';
+@import 'elements/_links';
+@import 'elements/_buttons';
 
 /* Generic */ 
 @import 'generic/_box-sizing';

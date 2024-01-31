@@ -1,15 +1,19 @@
 <header class="header">
     <div class="container wrapper">
         <nav class="flex items-center content-space-b">
-            {{navigation}}
+            {{navigation classes='navigation--header'}}
 
-            <img src="{{@site.logo}}" alt="Logo image of the site">
+            {{#if @site.logo}}
+                <img src="{{@site.logo}}" alt="Logo image of the site">
+            {{else}}
+                <span class="header__site-name">{{@site.title}}</span>
+            {{/if}}
 
-            <div class="flex items-center">
+            <div class="header__buttons flex items-center">
                 {{search}}
 
                 <a href="/sign-in/" class="button button--minimal">Sign in</a>
-                <a href="/sign-up/" class="button button--minimal">Sign up</a>
+                <a href="/sign-up/" class="button button button--header">Sign up</a>
             </div>
         </nav>
     </div>
