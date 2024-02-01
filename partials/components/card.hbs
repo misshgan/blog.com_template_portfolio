@@ -1,8 +1,10 @@
 {{#if is_hero_card}}
     {{#if feature_image}}
-        <figure class="card card--hero flex flex-col items-center">
-            <img data-src="{{feature_image}}" class="lazyload" alt="Category feature image">
-            <figcaption>#{{name}}</figcaption>
-        </figure>
+        <a class="card card--hero" href="{{url}}">
+            <figure class="flex flex-col items-center">
+                <img data-src="{{feature_image}}" class="lazyload" alt="Category feature image">
+            </figure>
+            <h3>#{{name}}</h3>
+        </a>
     {{/if}}
 {{/if}}
