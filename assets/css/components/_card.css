@@ -2,15 +2,27 @@
 
 .card--hero {
     width: 23.5%;
+    height: max-content;
     
-    figcaption {
+    h3 {
         margin-top: 1rem;
         font-size: 1.6rem;
         color: var(--color-gray);
         padding: 0;
+        text-align: center;
+    }
+
+    figure {
+        overflow: hidden;
     }
 
     img {
-        min-height: max-content;
+        height: 100%;
+        object-fit: cover;
+        transition: all .8s;
+    }
+
+    &:hover img {
+        transform: scale(1.2)
     }
 }
