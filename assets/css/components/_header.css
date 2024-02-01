@@ -2,7 +2,20 @@
     .container {
     }
     .wrapper {
-    }    
+    }  
+    
+    nav {
+        position: relative;
+    }
+
+    &__logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-size: 2.8rem;
+    }
 
     &__buttons {
         column-gap: 2rem;

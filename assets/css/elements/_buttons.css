@@ -1,5 +1,5 @@
 .button {
-    font-size: clamp(1.6rem, 1.372rem + 0.81vw, 2rem);
+    font-size: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
     background-color: var(--color-black);
     color: var(--color-white);
 

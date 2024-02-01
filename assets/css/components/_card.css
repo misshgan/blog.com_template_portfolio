@@ -1,0 +1,16 @@
+/* Hero section card */
+
+.card--hero {
+    width: 23.5%;
+    
+    figcaption {
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        color: var(--color-gray);
+        padding: 0;
+    }
+
+    img {
+        min-height: max-content;
+    }
+}

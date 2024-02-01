@@ -1,8 +1,8 @@
 {{#if is_hero_card}}
     {{#if feature_image}}
-        <figure class="card card--hero">
+        <figure class="card card--hero flex flex-col items-center">
             <img data-src="{{feature_image}}" class="lazyload" alt="Category feature image">
-            <caption>#{{name}}</caption>
+            <figcaption>#{{name}}</figcaption>
         </figure>
     {{/if}}
 {{/if}}

@@ -1,0 +1,16 @@
+/* Hero section cards loop */
+
+.hero {
+    &__title {
+        font-size: clamp(3.6rem, 2.916rem + 1.519vw, 4.8rem);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .cards-loop--hero {
+        margin-top: 2rem;
+        column-gap: 2%;
+    }
+}
+
+
