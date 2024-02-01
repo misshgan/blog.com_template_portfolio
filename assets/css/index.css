@@ -8,21 +8,8 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* Lib - Local component imports
 /* ---------------------------------------------------------- */
 
-/* Theme components */
-@import 'components/_header';
-@import 'components/_navigation';
-
-/* Default components */
-@import 'default/_badge';
-@import 'default/_comments';
-@import 'default/_content';
-@import 'default/_errors';
-
-/* Elements */ 
-@import 'elements/_body';
-@import 'elements/_image';
-@import 'elements/_links';
-@import 'elements/_buttons';
+/* Settings */ 
+@import "settings/_settings";
 
 /* Generic */ 
 @import 'generic/_box-sizing';
@@ -32,10 +19,25 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'objects/_flexgrid';
 @import 'objects/_keyframes';
 
-/* Settings */ 
-@import "settings/_settings";
-
 /* Utilities */ 
 @import 'utilities/_animation';
 @import 'utilities/_flex';
 @import 'utilities/_states';
+
+/* Elements */ 
+@import 'elements/_body';
+@import 'elements/_image';
+@import 'elements/_links';
+@import 'elements/_buttons';
+
+/* Default components */
+@import 'default/_badge';
+@import 'default/_comments';
+@import 'default/_content';
+@import 'default/_errors';
+
+/* Theme components */
+@import 'components/_header';
+@import 'components/_navigation';
+@import 'components/_card';
+@import 'components/_cards-loop';
