@@ -72,10 +72,22 @@
             "xl": {
                 "width": 2000
             }
+        },
+        "custom": {
+            "home_page_main_title": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "choose_categories_for_the_first_section_on_the_homepage": {
+                "type": "text",
+                "group": "homepage",
+                "description": "Type up to 4 tags you want to appear in the first section of the home page in this field. Note that you must enter the tag's slug separated by comma, not the full name. For tag cards to be displayed correctly, remember to set the feature image for each of them in the tag settings."
+            }
         }
     },
     "type": "module",
     "dependencies": {
+        "lazysizes": "^5.3.2",
         "postcss-nested": "^6.0.1"
     }
 }
