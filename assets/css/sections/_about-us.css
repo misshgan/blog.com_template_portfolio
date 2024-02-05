@@ -1,0 +1,27 @@
+.about-us {
+    margin-top: clamp(12rem, 10.291rem + 3.797vw, 15rem);
+
+    .wrapper {
+    }
+    .container {
+        column-gap: 4rem;
+    }
+
+    &__text {
+        h2 {
+            font-size: clamp(3.6rem, 3.03rem + 1.266vw, 4.6rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: clamp(3rem, 1.861rem + 2.532vw, 5rem);
+        }
+
+        p {
+            font-size: clamp(1.8rem, 1.572rem + 0.506vw, 2.2rem);
+        }
+    }
+
+    img, &__text {
+        max-width: 50%;
+    }
+}
+

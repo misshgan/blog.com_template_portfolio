@@ -41,3 +41,6 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'components/_navigation';
 @import 'components/_card';
 @import 'components/_cards-loop';
+
+/* Sections/blocks */
+@import 'sections/_about-us';
