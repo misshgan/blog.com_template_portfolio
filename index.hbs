@@ -2,3 +2,16 @@
 
 {{> components/cards-loop is_hero=true}}
 
+{{#if @custom.about_us}}
+    <section class="about-us {{^if @custom.feature_image_for_the_above_section}}about-us--no-image{{/if}}">
+        <div class="wrapper container {{#if @custom.feature_image_for_the_above_section}}flex items-start content-space-b{{/if}}">
+            <div class="about-us__text">
+                <h2>{{t "About us"}}</h2>
+                <p>{{{@custom.about_us}}}</p>
+            </div>
+            {{#if @custom.feature_image_for_the_above_section}}
+                <img src="{{@custom.feature_image_for_the_above_section}}" alt="About us section background image">
+            {{/if}}
+        </div>
+    </section>
+{{/if}}
