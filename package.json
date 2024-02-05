@@ -81,17 +81,17 @@
             "choose_categories_for_the_first_section_on_the_homepage": {
                 "type": "text",
                 "group": "homepage",
-                "description": "Type up to 4 tags you want to appear in the first section of the home page in this field. Note that you must enter the tag's slug separated by comma, not the full name. For tag cards to be displayed correctly, remember to set the feature image for each of them in the tag settings."
+                "description": "Enter up to 4 tag slugs, separated by commas, for the first section of the home page. Ensure proper display of tag cards by setting a featured image in the tag settings."
             },
             "about_us": {
                 "type": "text",
                 "group": "homepage",
-                "description": "If this field is blank the 'about us' section will not be displayed on the homepage.  Use the <b> tag to separate paragraphs."
+                "description": "Activate the 'about us' section by adding text in this field. If left blank, the 'about us' section won't appear on the homepage. Use <b> tags to separate paragraphs."
             },
             "feature_image_for_the_above_section": {
                 "type": "image",
                 "group": "homepage",
-                "description": "This image will be displayed in the 'about us' section. You can either add it or not, if you have added text in the field above then the 'about us' section will be displayed, with or without the image"
+                "description": "This image appears in the 'about us' section. Add it or leave it blank. If you've added text in the field above, the 'about us' section will be displayed with or without the image."
             }
         }
     },
