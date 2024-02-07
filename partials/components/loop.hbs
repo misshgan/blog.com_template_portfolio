@@ -1,0 +1,44 @@
+{{#if is_hero}}
+    <section class="hero">
+        <div class="wrapper container">
+            <h1 class="hero__title">
+            {{#if @custom.home_page_main_title}}
+                {{@custom.home_page_main_title}}
+            {{else}}
+                {{@site.title}}
+            {{/if}}</h1>
+            <div class="cards-loop cards-loop--hero flex">
+                {{#if @custom.choose_categories_for_the_first_section_on_the_homepage}}
+                    {{#get "tags" limit='all' filter="slug:[{{@custom.choose_categories_for_the_first_section_on_the_homepage}}]" order='name asc' as | categories |}}
+                        {{#foreach categories}}
+                            {{> components/card is_hero_card=true}}
+                        {{/foreach}}
+                    {{/get}}
+                {{else}}
+                    {{#get "tags" limit='all' order='name asc' as |category|}}
+                        {{#foreach category from='1' to='4'}}
+                            {{> components/card is_hero_card=true}}
+                        {{/foreach}}
+                    {{/get}}
+                {{/if}}
+            </div>
+        </div>
+    </section>
+{{else if is_gallery}}
+    {{#get "posts"  as |gallery_card|}}
+        {{#if gallery_card}}
+        <section class="gallery">
+            <div class="wrapper container">
+                <h2 class="section-title">{{t "Best photos"}}</h2>
+                <div id="home-gallery" class="cards-loop cards-loop--gallery flex">
+                    {{#foreach gallery_card}}
+                        {{#if feature_image}}
+                            {{> components/card is_gallery_card=true}}
+                        {{/if}}
+                    {{/foreach}}
+                </div>
+            </div>
+        </section>
+        {{/if}}
+    {{/get}}
+{{/if}}
