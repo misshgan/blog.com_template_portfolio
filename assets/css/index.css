@@ -29,6 +29,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'elements/_image';
 @import 'elements/_links';
 @import 'elements/_buttons';
+@import 'elements/_text';
 
 /* Default components */
 @import 'default/_badge';
