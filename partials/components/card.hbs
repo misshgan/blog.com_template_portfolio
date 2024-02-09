@@ -17,7 +17,16 @@
                 >
 
                 {{> icons/gallery-open}}
-                <span class="pswp-caption-content">'{{title}}' publication feature image</span>
+                <div class="pswp-caption-content">
+                    <h3>{{title}}</h3>
+                    <div>
+                        {{#if primary_tag}}
+                            <span>{{primary_tag.name}}</span>
+                            <span class="bullet"></span>
+                        {{/if}} 
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                    </div>
+                </div>
             </a>
         </figure>
    {{/if}}
