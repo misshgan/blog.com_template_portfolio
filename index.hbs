@@ -10,7 +10,16 @@
                 <p>{{{@custom.about_us}}}</p>
             </div>
             {{#if @custom.feature_image_for_the_above_section}}
-                <img src="{{@custom.feature_image_for_the_above_section}}" alt="About us section background image">
+                {{> components/image
+                    title='About us section background image'
+                    image_class='lazyload'
+                    image_url=@custom.feature_image_for_the_above_section
+                    size_xs=true
+                    size_s=true
+                    size_m=true
+                    size_l=true
+                    loading='lazy'
+                }}
             {{/if}}
         </div>
     </section>
