@@ -1,0 +1,14 @@
+{{^if @member}}
+    <aside class="cta">
+        <div class="wrapper container flex flex-col items-center">
+            <h2>
+                {{#if @custom.cta_section_title}}
+                    {{@custom.cta_section_title}}
+                {{else}}
+                    {{t 'Subscribe to discover our creative thoughts and inspirations!'}}
+                {{/if}}
+            </h2>
+            {{> components/form is_cta=true}}
+        </div>
+    </aside>
+{{/if}}
