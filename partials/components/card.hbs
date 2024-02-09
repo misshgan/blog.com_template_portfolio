@@ -2,7 +2,15 @@
     {{#if feature_image}}
         <a class="card card--hero" href="{{url}}">
             <figure class="flex flex-col items-center">
-                <img src="{{feature_image}}" data-src="{{feature_image}}" class="lazyload" alt="{{name}} category feature image">
+                {{> components/image
+                    image_type='tag'
+                    image_class='lazyload'
+                    image_url=feature_image
+                    size_xs=true
+                    size_s=true
+                    size_m=true
+                    loading='lazy'
+                }}
             </figure>
             <h3>#{{name}}</h3>
         </a>
@@ -10,12 +18,22 @@
 {{else if is_gallery_card}}
    {{#if feature_image}}
         <figure class="card card--gallery">
-            <a href="{{url}}"><img class="card-feature-image lazyload" src="{{feature_image}}" data-src="{{feature_image}}" alt="'{{title}}' publication feature image"></a>
+            <a href="{{url}}">
+                {{> components/image
+                    image_type='post'
+                    picture_class='card-feature-picture'
+                    image_class='lazyload card-feature-image'
+                    image_url=feature_image
+                    size_xs=true
+                    size_s=true
+                    size_m=true
+                    loading='lazy'
+                }}
+            </a>
             <a 
-                href="{{feature_image}}" 
+                href="{{img_url feature_image size="xl" format="webp"}}" 
                 class="card-lightbox-target glightbox" 
-                >
-
+            >
                 {{> icons/gallery-open}}
                 <div class="pswp-caption-content">
                     <h3>{{title}}</h3>
