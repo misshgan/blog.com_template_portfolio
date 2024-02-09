@@ -43,8 +43,16 @@
 
     src="{{img_url image_url size="xxs"}}"
 
-    alt="{{#match image_type "post"}}{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}{{/match}}{{#match image_type "site"}}{{@site.title}}{{/match}}{{#match image_type "author"}}{{name}}{{/match}}{{#match 
-    image_type "tag"}}{{name}}{{/match}}"
+    alt="
+      {{#if title}}
+        {{title}}
+      {{else}}
+        {{#match image_type "post"}}{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}{{/match}}
+        {{#match image_type "site"}}{{@site.title}}{{/match}}
+        {{#match image_type "author"}}{{name}}{{/match}}
+        {{#match image_type "tag"}}{{name}}{{/match}}
+      {{/if}}
+    "
 
     {{#if loading}}loading="{{loading}}"{{/if}}
   >
