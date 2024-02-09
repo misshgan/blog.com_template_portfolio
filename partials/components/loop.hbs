@@ -25,16 +25,14 @@
         </div>
     </section>
 {{else if is_gallery}}
-    {{#get "posts"  as |gallery_card|}}
+    {{#get "posts" include='tags'  as |gallery_card|}}
         {{#if gallery_card}}
         <section class="gallery">
             <div class="wrapper container">
                 <h2 class="section-title">{{t "Best photos"}}</h2>
                 <div id="home-gallery" class="cards-loop cards-loop--gallery flex">
                     {{#foreach gallery_card}}
-                        {{#if feature_image}}
-                            {{> components/card is_gallery_card=true}}
-                        {{/if}}
+                        {{> components/card is_gallery_card=true}}
                     {{/foreach}}
                 </div>
             </div>
