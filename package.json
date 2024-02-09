@@ -96,6 +96,10 @@
             "cta_section_title": {
                 "type": "text",
                 "description": "You can set up the title for the CTA section that will appear on the site. Users will see it if they haven't signed up."
+            },
+            "footer_cta_text": {
+                "type": "text",
+                "description": "Text that will be displayed below the logo in the footer."
             }
         }
     },
