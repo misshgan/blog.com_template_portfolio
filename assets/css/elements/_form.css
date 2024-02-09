@@ -1,0 +1,55 @@
+.form--cta {
+    margin-top: clamp(3rem, 2.43rem + 1.266vw, 4rem);
+    padding: 0 2.8rem;
+    width: 100%;
+
+    label {
+        width: 100%;
+        border-bottom: 1px solid var(--color-black);
+        position: relative;
+    }
+
+    label > span,
+    input::placeholder {
+        font-size: clamp(1.2rem, 0.858rem + 0.759vw, 1.8rem);
+        font-weight: 400;
+        color: #858585;
+        transition: all .3s;
+    }
+
+    label > span {
+        position: absolute;
+        top: calc(100% + 1rem);
+        left: 50%;
+        letter-spacing: 0.2px;
+        transform: translateX(-50%) translateY(-3.6rem);
+        opacity: 0;
+    }
+
+    input {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        position: relative;
+        z-index: 2;
+        transition: all 1s;
+    }
+
+    input:focus-visible {
+        outline: none;
+    }
+
+    input:focus-visible::placeholder {
+        opacity: 0;
+    }
+
+    input:focus-visible + span {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    button {
+        margin-top: 4rem;
+        padding: 1.2rem 2.6rem;
+    }
+}
