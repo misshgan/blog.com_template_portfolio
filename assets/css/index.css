@@ -40,6 +40,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 
 /* Theme components */
 @import 'components/_header';
+@import 'components/_footer';
 @import 'components/_navigation';
 @import 'components/_card';
 @import 'components/_cards-loop';
