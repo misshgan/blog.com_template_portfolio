@@ -2,6 +2,7 @@
     font-size: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
     background-color: var(--color-black);
     color: var(--color-white);
+    cursor: pointer;
 
     &--header {
         padding: 1.2rem 2.8rem;
@@ -11,4 +12,10 @@
         background-color: transparent;
         color: inherit;
     } 
+
+    &--transparent {
+        background-color: transparent;
+        color: inherit;
+        border: 1px solid var(--color-black)
+    }
 }
