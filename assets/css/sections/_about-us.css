@@ -17,8 +17,12 @@
         }
     }
 
-    img, &__text {
+    picture, &__text {
         max-width: 50%;
+    }
+
+    img {
+        width: 100%;
     }
 }
 

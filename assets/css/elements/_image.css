@@ -5,4 +5,7 @@ img {
   height: auto;
 }
 
-picture { border-radius: inherit; }
+picture {
+   border-radius: inherit; 
+   width: 100%;
+}
