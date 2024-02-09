@@ -1,0 +1,53 @@
+.footer {
+    .container {
+        padding-top: clamp(5rem, 4.43rem + 1.266vw, 6rem);
+        padding-bottom: 2rem;
+    }
+    .wrapper {
+    }
+
+    &__column {
+    }
+    &__logo {
+        height: 4rem;
+
+        img {
+            height: 100%;
+        }
+    }
+    &__site-name {
+        font-size: 2.8rem;
+    }
+    &__cta-text {
+        margin-top: 3rem;
+        max-width: 27.5rem;
+        font-size: clamp(1.6rem, 1.486rem + 0.253vw, 1.8rem);
+    }
+    &__column-title {
+        font-size: clamp(2rem, 1.886rem + 0.253vw, 2.2rem);
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
+
+    &__socials-group {
+        column-gap: 1.5rem;
+    }
+
+    &__copy {
+        margin-top: 6rem;
+        min-width: 100%;
+        text-align: center;
+
+        p {
+            font-size: clamp(1.2rem, 0.972rem + 0.506vw, 1.6rem);
+            color: var(--color-gray)
+        }
+    }
+
+    .button {
+        margin-top: 3rem;
+        width: max-content;
+        padding: 1.2rem 2.2rem;
+    }
+}
