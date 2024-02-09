@@ -7,3 +7,12 @@
         font-weight: 500;
     }
 }
+
+.navigation--is-footer {
+    column-gap: unset;
+    row-gap: 1.5rem;
+
+    li {
+        font-size: clamp(2rem, 1.886rem + 0.253vw, 2.2rem);
+    }
+}
