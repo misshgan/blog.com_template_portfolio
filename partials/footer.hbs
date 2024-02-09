@@ -1,0 +1,50 @@
+<footer class="footer">
+    <div class="container wrapper flex content-space-b flex-wrap">
+        <div class="footer__column flex flex-col">
+            {{#if @site.logo}}
+                {{> components/image
+                    image_type='site'
+                    picture_class='footer__logo'
+                    image_url=@site.logo
+                    size_xs=true
+                    size_s=true
+                    loading='eager'
+                }}
+            {{else}}
+                <span class="footer__site-name">{{@site.title}}</span>
+            {{/if}}
+            {{#if @custom.footer_cta_text}}
+                <p class="footer__cta-text">{{@custom.footer_cta_text}}</p>
+            {{/if}}
+            {{^if @member}}
+                <a href="/sign-up" class="button button--transparent">{{t 'Subscribe'}}</a>
+            {{/if}}
+        </div>
+        {{#if @site.navigation}}
+            <div class="footer__column flex flex-col">
+                <h4 class="footer__column-title">{{t 'Navigation'}}</h4>
+                {{> navigation classes='navigation--is-footer' is_footer=true}}
+            </div>
+        {{/if}}
+        {{#if @site.secondary_navigation}}
+             <div class="footer__column flex flex-col">
+                <h4 class="footer__column-title">&nbsp;</h4>
+                {{navigation classes='navigation--is-footer' type="secondary" is_footer=true}}
+            </div>
+        {{/if}}
+        <div class="footer__column flex flex-col">
+            <h4 class="footer__column-title">{{t 'Social media'}}</h4>
+            <div class="flex items-center footer__socials-group">
+                {{#if @site.facebook}}
+                <a href="{{@site.facebook}}">{{> icons/facebook}}</a>
+                {{/if}}
+                {{#if @site.twitter}}
+                    <a href="{{@site.twitter}}">{{> icons/twitter}}</a>
+                {{/if}}
+            </div>
+        </div>
+        <div class="footer__copy">
+            <p>2024 © All rights reserved</p>
+        </div>
+</div>
+</footer>
