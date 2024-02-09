@@ -92,6 +92,10 @@
                 "type": "image",
                 "group": "homepage",
                 "description": "This image appears in the 'about us' section. Add it or leave it blank. If you've added text in the field above, the 'about us' section will be displayed with or without the image."
+            },
+            "cta_section_title": {
+                "type": "text",
+                "description": "You can set up the title for the CTA section that will appear on the site. Users will see it if they haven't signed up."
             }
         }
     },
