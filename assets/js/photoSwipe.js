@@ -13,7 +13,7 @@ export default function handlePhotoSwipe() {
         pswpModule: PhotoSwipe,
         paddingFn: (viewportSize) => {
             return {
-              top: 30, bottom: 30
+              top: 40, bottom: 40
             }
           },
     });
@@ -22,22 +22,40 @@ export default function handlePhotoSwipe() {
         type: 'below'
     });
 
-    function loadImagesAndSetDimensions(imagesSelector) {
-        const galleryContainer = document.querySelector('#home-gallery');
-        const images = galleryContainer.querySelectorAll(imagesSelector);
+        
+    async function loadImagesAndSetDimensions(linksSelector) {
+        try {
+            const galleryContainer = document.querySelector('#home-gallery');
+            if (!galleryContainer) throw new Error('Gallery container not found');
     
-        images.forEach(image => {
-            const img = new Image();
-            img.src = image.src;
+            const links = galleryContainer.querySelectorAll(linksSelector);
+            if (!links.length) throw new Error('No links found');
     
-            img.onload = function() {
-                image.parentElement.nextElementSibling.setAttribute('data-pswp-width', this.width);
-                image.parentElement.nextElementSibling.setAttribute('data-pswp-height', this.height);
+            const loadImage = async (link) => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.src = link;
+    
+                    img.onload = function() {
+                        link.setAttribute('data-pswp-width', this.width);
+                        link.setAttribute('data-pswp-height', this.height);
+                        resolve();
+                    };
+    
+                    img.onerror = function() {
+                        reject(new Error('Failed to load image: ' + link.src));
+                    };
+                });
             };
-        });
+    
+            await Promise.all(Array.from(links).map(loadImage));
+        } catch (error) {
+            console.error('Error in loadImagesAndSetDimensions:', error);
+        }
     }
     
-    loadImagesAndSetDimensions('.card-feature-image');
+    loadImagesAndSetDimensions('.card-lightbox-target');
+       
 
     lightbox.init();
 }
