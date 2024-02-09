@@ -30,6 +30,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'elements/_links';
 @import 'elements/_buttons';
 @import 'elements/_text';
+@import 'elements/_form';
 
 /* Default components */
 @import 'default/_badge';
@@ -42,6 +43,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'components/_navigation';
 @import 'components/_card';
 @import 'components/_cards-loop';
+@import 'components/_cta';
 
 /* Sections/blocks */
 @import 'sections/_about-us';
