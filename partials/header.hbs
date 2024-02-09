@@ -4,14 +4,20 @@
             {{navigation classes='navigation--header'}}
 
             {{#if @site.logo}}
-                <img  class="header__logo" src="{{@site.logo}}" alt="Logo image of the site">
+                {{> components/image
+                    image_type='site'
+                    picture_class='header__logo'
+                    image_url=@site.logo
+                    size_xs=true
+                    size_s=true
+                    loading='eager'
+                }}
             {{else}}
-                <span class="header__logo" class="header__site-name">{{@site.title}}</span>
+                <span class="header__site-name">{{@site.title}}</span>
             {{/if}}
 
             <div class="header__buttons flex items-center">
                 {{search}}
-
                 <a href="/sign-in/" class="button button--minimal">Sign in</a>
                 <a href="/sign-up/" class="button button button--header">Sign up</a>
             </div>
