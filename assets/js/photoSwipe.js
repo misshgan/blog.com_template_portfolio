@@ -13,7 +13,7 @@ export default function handlePhotoSwipe() {
         pswpModule: PhotoSwipe,
         paddingFn: (viewportSize) => {
             return {
-              top: 50, bottom: 100
+              top: 30, bottom: 30
             }
           },
     });
