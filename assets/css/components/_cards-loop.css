@@ -15,10 +15,6 @@
 
 .gallery {
     margin-top: clamp(12rem, 10.291rem + 3.797vw, 15rem);
-
-    .section-title {
-        margin-bottom: clamp(3rem, 1.861rem + 2.532vw, 5rem);
-    }
     
     .cards-loop--gallery {
         display: grid;
@@ -28,4 +24,11 @@
     }
 }
 
+.categories {
+    padding-bottom: clamp(10rem, 7.152rem + 6.329vw, 15rem);
+
+    .cards-loop--categories {
+        gap: 2rem;
+    }
+}
 
