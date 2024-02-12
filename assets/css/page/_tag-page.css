@@ -1,0 +1,21 @@
+.tag-page {
+    padding-bottom: clamp(10rem, 7.152rem + 6.329vw, 15rem);
+
+    .container {
+    }
+    .wrapper {
+    }
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    &__description {
+        max-width: 57.5rem;
+        text-align: center;
+        margin: 0 auto;
+
+        font-size: clamp(1.8rem, 1.572rem + 0.506vw, 2.2rem);
+    }
+}
+
