@@ -15,7 +15,7 @@
 
 .gallery {
     margin-top: clamp(12rem, 10.291rem + 3.797vw, 15rem);
-    
+
     .cards-loop--gallery {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -32,3 +32,17 @@
     }
 }
 
+.cards-loop--posts {
+    border-top: 1px solid #cdcdcd;
+    margin-top: clamp(4rem, 3.43rem + 1.266vw, 5rem);
+    padding-top: 1rem;
+
+    .cards-loop__header {
+        font-size: clamp(1.4rem, 1.058rem + 0.759vw, 2rem);
+    }
+    .cards-loop__cards {
+        margin-top: 3rem;
+        row-gap: clamp(4rem, 1.722rem + 5.063vw, 8rem);
+        column-gap: 2rem;
+    }
+}
