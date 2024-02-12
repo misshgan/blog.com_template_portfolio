@@ -39,4 +39,23 @@
         </section>
         {{/if}}
     {{/get}}
+{{else if is_categories}}
+    <section class="categories">
+        <div class="wrapper container">
+            <h1 class="section-title">{{t 'Categories'}}</h1>
+            <div class="cards-loop cards-loop--categories flex flex-wrap">
+                {{#get "tags" as |category|}}
+                    {{#if category}}
+                        {{#foreach category}}
+                            {{#if feature_image}}
+                                {{> components/card is_category=true}}
+                            {{/if}}
+                        {{/foreach}}
+                    {{else}}
+                       {{> components/not-found item='category'}}
+                    {{/if}}
+                {{/get}}
+            </div>
+        </div>
+    </section>
 {{/if}}
