@@ -80,3 +80,63 @@
 .card--gallery:nth-child(11n+7) {
     grid-column: span 4;
 }
+
+
+.card--category {
+    display: block;
+    position: relative;
+
+    &.card--category-1 {
+        width: 100%;
+        height: clamp(17.5rem, 0.127rem + 38.608vw, 48rem);
+    }
+
+    &.card--category-2 {
+        width: calc(50% - 1rem);
+        height: clamp(17.5rem, 4.684rem + 28.481vw, 40rem);
+    }
+
+    &.card--category-3 {
+        width: calc(25% - 1.5rem);
+        height: clamp(17.5rem, 10.665rem + 15.19vw, 29.5rem);
+    }
+    
+    figure {
+        overflow: hidden;
+    }
+
+    figure, img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+
+    .card__caption {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        font-weight: 600;
+        color: var(--color-white);
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &.card--category-1 .card__caption {
+        font-size: clamp(2rem, 0.861rem + 2.532vw, 4rem);
+    }
+
+    &.card--category-2 .card__caption {
+        font-size: clamp(2rem, 1.146rem + 1.899vw, 3.5rem);
+    }
+
+    &.card--category-3 .card__caption {
+        font-size: clamp(2rem, 1.658rem + 0.759vw, 2.6rem);
+    }
+}
