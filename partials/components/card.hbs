@@ -46,5 +46,20 @@
             </a>
         </figure>
    {{/if}}
+{{else if is_category}}
+    <a href="{{url}}" class="card card--category {{#has number="1"}} card--category-1{{else has number="2, 3"}} card--category-2{{else}} card--category-3{{/has}}">
+        <figure>
+            {{> components/image
+                image_type='tag'
+                image_class='lazyload'
+                image_url=feature_image
+                size_xs=true
+                size_s=true
+                size_m=true
+                loading='lazy'
+            }}
+            <caption><span class="card__caption">{{name}}</span></caption>
+        </figure>
+    </a>
 {{/if}}
 
