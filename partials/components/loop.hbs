@@ -58,4 +58,32 @@
             </div>
         </div>
     </section>
+{{else if is_posts}}
+    <div class="cards-loop cards-loop--posts">
+        <div class="cards-loop__header">
+            {{#if is_tag_page}}
+                {{#tag}}
+                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                {{/tag}}
+            {{else if is_author_page}}
+                {{#author}}
+                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                {{/author}}
+            {{/if}}
+        </div>
+
+        <div class="cards-loop__cards flex flex-wrap">
+            {{#foreach posts}}
+                {{#if feature_image}}
+                    {{> components/card is_post=true}}
+                {{/if}}
+            {{/foreach}}
+            {{#foreach posts}}
+                {{^if feature_image}}
+                    {{> components/card is_post=true}}
+                {{/if}}
+            {{/foreach}}
+        </div>
+    </div>
+   
 {{/if}}
