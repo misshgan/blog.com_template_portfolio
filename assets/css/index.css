@@ -49,3 +49,6 @@ production stylesheet in assets/built/screen.css using: npm run dev
 
 /* Sections/blocks */
 @import 'sections/_about-us';
+
+/* Pages */
+@import 'page/_tag-page';
