@@ -45,6 +45,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'components/_card';
 @import 'components/_cards-loop';
 @import 'components/_cta';
+@import 'components/_not-found';
 
 /* Sections/blocks */
 @import 'sections/_about-us';
