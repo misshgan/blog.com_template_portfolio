@@ -74,14 +74,7 @@
 
         <div class="cards-loop__cards flex flex-wrap">
             {{#foreach posts}}
-                {{#if feature_image}}
-                    {{> components/card is_post=true}}
-                {{/if}}
-            {{/foreach}}
-            {{#foreach posts}}
-                {{^if feature_image}}
-                    {{> components/card is_post=true}}
-                {{/if}}
+                {{> components/card is_post=true}}
             {{/foreach}}
         </div>
     </div>
