@@ -1,46 +1,45 @@
 {{!< default}}
 
-<div class="gh-page">
-    <div class="gh-container">
-
+<section class="author-page">
+    <div class="container wrapper">
         {{#author}}
-        <header class="gh-page-head">
-            {{#if profile_image}}
-                <img class="gh-author-image" src="{{profile_image}}" alt="{{name}}" />
-            {{/if}}
-
-            <h1>{{name}}</h1>
-            {{#if bio}}
-                <p>{{bio}}</p>
-            {{/if}}
-
-            <div class="gh-author-meta">
-                <div class="gh-author-links">
-                    {{#if website}}
-                        <a href="{{website}}" target="_blank" rel="noopener">Website</a>
-                    {{/if}}
-                    {{#if twitter}}
-                        <a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a>
-                    {{/if}}
-                    {{#if facebook}}
-                        <a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a>
-                    {{/if}}
-                </div>
+            <div class="author-page__header flex flex-col items-center">
+                {{#if profile_image}}
+                    <figure class="author-page__profile-image">
+                        {{> components/image
+                            image_type='author'
+                            image_class='lazyload'
+                            image_url=profile_image
+                            size_xs=true
+                            size_s=true
+                            size_m=true
+                            loading='lazy'
+                        }}
+                    </figure>
+                {{/if}}
+                <h1 class="section-title">{{name}}</h1>
+                {{#has any="facebook, twitter, website, location"}}
+                    <div class="author-page__socials flex items-center">
+                        {{#if location}}
+                            <span>{{> icons/location}} {{location}}</span>
+                        {{/if}}
+                        {{#if website}}
+                            <a target="_blank" href="{{website}}">{{> icons/copy}} {{t "Website"}}</a>
+                        {{/if}}
+                        {{#if twitter}}
+                            <a href="{{twitter}}">{{> icons/twitter}} {{t 'Twitter'}}</a>
+                        {{/if}}
+                        {{#if facebook}}
+                            <a href="{{facebook}}">{{> icons/facebook}} {{t 'Facebook'}}</a>
+                        {{/if}}
+                    </div>
+                {{/has}}
+                {{#if bio}}
+                    <p class="author-page__description">{{bio}}</p>
+                {{/if}}
             </div>
-
-            {{#if cover_image}}
-                <img class="gh-page-image" src="{{cover_image}}" alt="{{name}}" />
-            {{/if}}
-        </header>
         {{/author}}
 
-        <div class="gh-postfeed">
-        {{#foreach posts}}
-
-            {{!-- partials/card.hbs --}}
-
-        {{/foreach}}
-        </div>
-
+        {{> components/loop is_posts=true is_author_page=true}}
     </div>
-</div>
+</section>
