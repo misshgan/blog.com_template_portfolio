@@ -13,6 +13,7 @@
     &--minimal {
         background-color: transparent;
         color: inherit;
+        padding: 0;
     } 
 
     &--transparent {
