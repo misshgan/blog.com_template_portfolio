@@ -18,7 +18,9 @@
 </head>
 <body class="{{body_class}}">
 
-{{> header}}
+{{^is 'sign-in, sign-up'}}
+    {{> header}}
+{{/is}}
 
 <main class="main">
 
@@ -27,7 +29,9 @@
 
 </main>
 
-{{> footer}}
+{{^is 'sign-in, sign-up'}}
+    {{> footer}}
+{{/is}}
 
 {{!-- <foot> --}}
 {{ghost_foot}}
