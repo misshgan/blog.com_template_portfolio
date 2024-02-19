@@ -53,3 +53,4 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* Pages */
 @import 'page/_tag-page';
 @import 'page/_author-page';
+@import 'page/_authentication';
