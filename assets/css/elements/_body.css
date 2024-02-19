@@ -24,7 +24,11 @@ body {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     position: relative;
-    padding-top: clamp(1.5rem, 1.215rem + 0.633vw, 2rem);
+
+    &:not(.page-sign-in, .page-sign-up) {
+        padding-top: clamp(1.5rem, 1.215rem + 0.633vw, 2rem);
+    }
+    
 
     &.no-scroll {
         overflow: hidden;
