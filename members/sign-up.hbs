@@ -1,0 +1,38 @@
+{{!< ../default}}
+
+ {{#if @member}}
+
+    <script>window.location = '{{@site.url}}';</script>
+
+{{else}}
+
+    <section class="authentication">
+        <div class="container wrapper flex flex-col items-center">
+            <a href="/">
+                {{#if @site.logo}}
+                    {{> components/image
+                        image_type='site'
+                        picture_class='authentication__logo'
+                        image_url=@site.logo
+                        size_xs=true
+                        size_s=true
+                        loading='eager'
+                    }}
+                {{else}}
+                    <span class="site-name">{{@site.title}}</span>
+                {{/if}}
+            </a>
+            {{#page}}
+                <h1 class="authentication__title">
+                    {{#if title}}
+                        {{title}}
+                    {{else}}
+                        {{t 'Welcome Back!'}}
+                    {{/if}}
+                </h1>
+            {{/page}}
+            {{> components/form sign-up=true}}
+        </div>
+    </section>
+
+{{/if}}
