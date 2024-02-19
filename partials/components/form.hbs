@@ -1,9 +1,73 @@
 {{#if is_cta}}
-    <form class="form form--cta flex flex-col items-center" data-members-form="subscribe">
-        <label>
-            <input data-members-email type="email" autocomplete="email" placeholder="{{t 'Your e-mail address'}}">
-            <span>{{t 'Your e-mail address'}}</span>
-        </label>
-        <button class="button">{{t 'Subscribe'}}</button>
+    <form
+        class="form form--cta flex flex-col items-center"
+        data-members-form="subscribe"
+    >
+        <div class="form__group">
+            <label>
+                <input
+                    data-members-email
+                    type="email"
+                    {{!-- autocomplete="email" --}}
+                    required="true"
+                    placeholder="{{t 'Your e-mail address'}}"
+                />
+                <span>{{t "Your e-mail address"}}</span>
+            </label>
+             <div class="form__notification flex flex-col">
+                <p class="form__error-text" data-members-error></p>
+                <p class="form__success-text">{{t 'The magic link was successfully sent!'}}</p>
+            </div>
+        </div>
+        <button class="button">{{t "Subscribe"}} {{> icons/loader}}</button>
+    </form>
+{{else if sign-in}}
+    <form
+        class="form form--sign-in form--authentication flex flex-col"
+        data-members-form="signin"
+        data-members-autoredirect="false"
+    >
+        <div class="form__group">
+            <label class="flex flex-col">
+                <span>{{t "Your Email Address"}}</span>
+                <input type="text" required="true" placeholder="example@mail.com" data-members-email/>
+            </label>
+            <div class="form__notification flex flex-col">
+                <p class="form__error-text" data-members-error></p>
+                <p class="form__success-text">{{t 'The magic link was successfully sent!'}}</p>
+            </div>
+        </div>
+        <button class="button">{{t "Sign in"}} {{> icons/loader}}</button>
+        <p class="form__description">
+            {{t "Don't have an account yet?"}}
+            <a href="/sign-up">{{t "Sign up"}}</a>
+        </p>
+        
+    </form>
+{{else if sign-up}}
+    <form
+        class="form form--sign-up form--authentication flex flex-col"
+        data-members-form="sigup"
+        data-members-autoredirect="false"
+    >
+        <div class="form__group">
+            <label class="flex flex-col">
+                <span>{{t "Your Name"}}</span>
+                <input type="text" required="true" placeholder="Mary" data-members-name/>
+            </label>
+            <label class="flex flex-col">
+                <span>{{t "Your Email Address"}}</span>
+                <input type="text" required="true" placeholder="example@mail.com" data-members-email/>
+            </label>
+            <div class="form__notification flex flex-col">
+                <p class="form__error-text" data-members-error></p>
+                <p class="form__success-text">{{t 'The magic link was successfully sent!'}}</p>
+            </div>
+        </div>
+        <button class="button">{{t "Sign up"}} {{> icons/loader}}</button>
+        <p class="form__description">
+            {{t "Already have an account?"}}
+            <a href="/sign-in">{{t "Sign in"}}</a>
+        </p>
     </form>
 {{/if}}
