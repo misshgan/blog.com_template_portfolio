@@ -157,6 +157,7 @@
     figure {
         height: clamp(29rem, 17.038rem + 26.582vw, 50rem);
         overflow: hidden;
+        margin-bottom: clamp(2rem, 1.829rem + 0.38vw, 2.3rem);
     }
 
     figure:hover img {
@@ -171,7 +172,6 @@
     }
 
     h3 {
-        margin-top: 2rem;
         font-size: clamp(2.6rem, 2.03rem + 1.266vw, 3.6rem);
         font-weight: 500;
     }
