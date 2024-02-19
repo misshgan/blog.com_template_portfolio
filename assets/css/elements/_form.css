@@ -1,3 +1,58 @@
+/* Default form settings */ 
+
+
+.form {
+
+    .form__group {
+        position: relative;
+    }
+
+    .form__notification {
+        position: absolute;
+        top: calc(100% + 1rem);
+        left: 0;
+        width: 100%;
+    }
+
+    .form__error-text {
+        color: var(--color-error)
+    }
+
+    .form__success-text {
+        color: var(--color-success)
+    }
+
+    .form__error-text,
+    .form__success-text {
+        text-align: center;
+        font-size: clamp(1.4rem, 1.286rem + 0.253vw, 1.6rem);
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s;
+    }
+
+    &.error .form__error-text,
+    &.success .form__success-text {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.error .form__success-text {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &.success .form__error-text {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* CTA form */
+
 .form--cta {
     margin-top: clamp(3rem, 2.43rem + 1.266vw, 4rem);
     padding: 0 2.8rem;
@@ -5,8 +60,12 @@
 
     label {
         width: 100%;
-        border-bottom: 1px solid var(--color-black);
         position: relative;
+    }
+
+    .form__group {
+        border-bottom: 1px solid var(--color-black);
+        width: 100%;
     }
 
     label > span,
@@ -14,7 +73,7 @@
         font-size: clamp(1.2rem, 0.858rem + 0.759vw, 1.8rem);
         font-weight: 400;
         color: #858585;
-        transition: all .3s;
+        transition: all 0.3s;
     }
 
     label > span {
@@ -24,6 +83,13 @@
         letter-spacing: 0.2px;
         transform: translateX(-50%) translateY(-3.6rem);
         opacity: 0;
+        margin-top: 0.6rem;
+    }
+
+    &.success label > span,
+    &.loading label > span,
+    &.error label > span {
+        display: none;
     }
 
     input {
@@ -33,6 +99,7 @@
         position: relative;
         z-index: 2;
         transition: all 1s;
+        font-size: clamp(1.6rem, 1.486rem + 0.253vw, 1.8rem);
     }
 
     input:focus-visible {
@@ -48,8 +115,128 @@
         opacity: 1;
     }
 
+    &.error input::placeholder, 
+    &.success input::placeholder {
+        display: none;
+    }
+
     button {
         margin-top: 4rem;
         padding: 1.2rem 2.6rem;
+
+        position: relative;
+        transition: all .3s;
+
+        svg {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &.loading .button {
+        color: transparent;
+        cursor: not-allowed;
+    }
+
+    &.loading input {
+        cursor: not-allowed
+    }
+
+    &.loading .button svg {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Authentication form */
+
+.form--authentication {
+    width: min(40rem, 100%);
+
+    label {
+        font-size: clamp(1.8rem, 1.686rem + 0.253vw, 2rem);
+    }
+
+    label:nth-child(2) {
+        margin-top: 2rem;
+    }
+
+    input {
+        margin-top: clamp(1rem, 0.715rem + 0.633vw, 1.5rem);
+        padding: clamp(1.4rem, 1.058rem + 0.759vw, 2rem);
+        text-align: center;
+        background-color: hsla(0, 0%, 96%, 1);
+        font-size: clamp(1.6rem, 1.486rem + 0.253vw, 1.8rem);
+    }
+
+    input::placeholder {
+        transition: all .2s;
+    }
+
+    input:focus-visible::placeholder {
+        opacity: 0;
+    }
+
+    input:focus-visible {
+        outline: none;
+        border: none;
+    }
+
+    .form__description {
+        margin-top: clamp(3rem, 1.861rem + 2.532vw, 5rem);
+        text-align: center;
+
+        font-size: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
+        
+        a {
+            color: var(--ghost-accent-color);
+            text-decoration: underline;
+        }
+    }
+
+    .button {
+        margin-top: 3rem;
+        padding: 1.6rem 7.5rem;
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+
+        position: relative;
+        transition: all .3s;
+
+        svg {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &.error .button {
+       margin-top: 6rem;
+    }
+
+    &.success .button {
+        margin-top: 5rem;
+    }
+
+    &.loading .button {
+        color: transparent;
+        cursor: not-allowed;
+    }
+
+    &.loading input {
+        cursor: not-allowed
+    }
+
+    &.loading .button svg {
+        opacity: 1;
+        visibility: visible;
     }
 }
