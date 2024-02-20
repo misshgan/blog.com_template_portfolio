@@ -1,0 +1,32 @@
+{{#has visibility="paid"}}
+<div class="members-cta">
+	<h2>{{t "Become a member to see the rest"}}</h2>
+	{{#if @member}}
+	<p>{{t "You’ve landed on a piece of content that’s exclusive to the paid members. Upgrade your account to get access to the post. 👇"}}</p>
+	<a href="javascript:" class="button button--content-cta" data-portal="account/plans">{{t "See plans"}}</a>
+	{{else}}
+	<p>{{t "You’ve landed on a piece of content that’s exclusive to members. Not yet a member? Sign up for free 👇"}}</p>
+	<a class="button button--content-cta" href="{{@site.url}}/sign-up/">{{t "Sign up now"}}</a>
+	<small><span>{{t "Already have an account?"}}</span> <a href="{{@site.url}}/sign-in/">{{t "Sign in"}}</a></small>
+	{{/if}}
+</div>
+{{else has visibility="tiers"}}
+<div class="members-cta">
+	<h2>{{plural tiers.length empty=(t "No tiers") singular=(t "This post is for subscribers with the tier:") plural=(t "This post is for subscribers with any of the tiers:")}} {{tiers lastSeparator=(t "or") suffix=""}}</h2>
+	{{#if @member}}
+	<p>{{t "Upgrade your account to get access to the post."}}</p>
+	<a href="javascript:" class="button button--content-cta" data-portal="account/plans">{{t "See plans"}}</a>
+	{{else}}
+	<p>{{t "Sign up now and upgrade your account to get access to the post."}}</p>
+	<a class="button button--content-cta" href="{{@site.url}}/sign-up/">{{t "Sign up now"}}</a>
+	<small><span>{{t "Already have an account?"}}</span> <a href="{{@site.url}}/sign-in/">{{t "Sign in"}}</a></small>
+	{{/if}}
+</div>
+{{else has visibility="members"}}
+<div class="members-cta">
+	<h2>{{t "Become a member to see the rest"}}</h2>
+	<p>{{t "You’ve landed on a piece of content that’s exclusive to members. Not yet a member? Sign up for free 👇"}}</p>
+	<a class="button button--content-cta" href="{{@site.url}}/sign-up/">{{t "Sign up now"}}</a>
+	<small><span>{{t "Already have an account?"}}</span> <a href="{{@site.url}}/sign-in/">{{t "Sign in"}}</a></small>
+</div>
+{{/has}}
