@@ -4,7 +4,14 @@
     color: var(--color-white);
     cursor: pointer;
     padding: 2rem 4.2rem;
-    display: inline-block;
+    display: block;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--content-cta {
+        margin-bottom: 2rem;
+    }
 
     &--header {
         padding: 1.2rem 2.8rem;
