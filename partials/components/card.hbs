@@ -90,5 +90,51 @@
         {{/if}}
         
     </article>
+{{else if is_tier_free}}
+    <article class="tier tier--free flex flex-col">
+        <header>
+            <h2 class="tier__title">{{name}}</h2>
+            <h3 class="tier__price"><span>{{t "$"}}</span>0</h3>
+        </header>
+        <div class="tier__content">
+            {{#if description}}
+                <p class="tier__description">{{{description}}}</p>
+            {{/if}}
+            {{#if benefits}}
+                <div class="tier__benefits">
+                    <ul>
+                        {{#foreach benefits as |benefit|}}
+                            <li>{{benefit}}</li>
+                        {{/foreach}}
+                    </ul>
+                </div>
+            {{/if}}
+        </div>
+        <a title="Sign up now" href="/sign-up/" class="button">{{t 'Sign up now'}}</a>
+    </article>
+{{else if is_tier_paid}}
+    <article class="tier tier--paid flex flex-col">
+         <header>
+            <h2 class="tier__title">{{name}}</h2>
+            <h3 class="tier__price" data-monthly>{{#if monthly_price}}<span>{{price currency=currency}}</span>{{price monthly_price}}<span>{{t "/mo"}}</span>{{else}}<span>$</span>0<span>{{t "/mo"}}</span>{{/if}}</h3>
+			<h3 class="tier__price" data-yearly>{{#if yearly_price}}<span>{{price currency=currency}}</span>{{price yearly_price}}<span>{{t "/y"}}</span>{{else}}<span>$</span>0<span>{{t "/y"}}</span>{{/if}}</h3>
+        </header>
+        <div class="tier__content">
+            {{#if description}}
+                <p class="tier__description">{{{description}}}</p>
+            {{/if}}
+            {{#if benefits}}
+                <div class="tier__benefits">
+                    <ul>
+                        {{#foreach benefits as |benefit|}}
+                            <li>{{benefit}}</li>
+                        {{/foreach}}
+                    </ul>
+                </div>
+            {{/if}}
+        </div>
+        <a class="button" title="Subscribe now" href="javascript:" data-portal="signup/{{id}}/monthly" data-monthly>{{t "Subscribe now"}}</a>
+		<a class="button" title="Subscribe now" href="javascript:" data-portal="signup/{{id}}/yearly" data-yearly>{{t "Subscribe now"}}</a>
+    </article>
 {{/if}}
 
