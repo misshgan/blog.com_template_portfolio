@@ -13,6 +13,8 @@
     }
 }
 
+/* Gallery section cards loop */
+
 .gallery {
     margin-top: clamp(12rem, 10.291rem + 3.797vw, 15rem);
 
@@ -24,6 +26,8 @@
     }
 }
 
+/* Categories section cards loop */
+
 .categories {
     padding-bottom: clamp(10rem, 7.152rem + 6.329vw, 15rem);
 
@@ -31,6 +35,8 @@
         gap: 2rem;
     }
 }
+
+/* Post cards loop */
 
 .cards-loop--posts {
     border-top: 1px solid #cdcdcd;
@@ -45,4 +51,20 @@
         row-gap: clamp(4rem, 1.722rem + 5.063vw, 8rem);
         column-gap: 2rem;
     }
+}
+
+/* Related section cards loop */
+
+.related {
+    margin: clamp(10rem, 7.152rem + 6.329vw, 15rem) 0;
+
+    .wrapper {
+    }
+    .container {
+    }
+    .cards-loop--related {
+        column-gap: 2rem;
+        row-gap: 4rem;
+    }
+    
 }
