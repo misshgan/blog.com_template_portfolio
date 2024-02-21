@@ -16,7 +16,14 @@
 {{else if is_gallery_card}}
    {{#if feature_image}}
         <figure class="card card--gallery">
-            <a href="{{url}}">
+            <a href="{{url}}" class="card-post-link">
+            </a>
+            <a 
+                href="{{img_url feature_image size="xl" format="webp"}}" 
+                class="card-lightbox-target glightbox" 
+                data-cropped="true"
+            >
+                {{> icons/gallery-open classes='card-open-icon'}}
                 {{> components/image
                     image_type='post'
                     picture_class='card-feature-picture'
@@ -27,12 +34,6 @@
                     size_m=true
                     loading='lazy'
                 }}
-            </a>
-            <a 
-                href="{{img_url feature_image size="xl" format="webp"}}" 
-                class="card-lightbox-target glightbox" 
-            >
-                {{> icons/gallery-open}}
                 <div class="pswp-caption-content">
                     <h3>{{title}}</h3>
                     <div class="flex items-center">
