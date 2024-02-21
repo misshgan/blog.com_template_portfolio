@@ -26,6 +26,8 @@
     &--transparent {
         background-color: transparent;
         color: inherit;
-        border: 1px solid var(--color-black)
+        border: 1px solid var(--color-black);
+        margin-left: unset;
+        margin-right: unset;
     }
 }
