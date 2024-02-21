@@ -4,12 +4,17 @@
 
     font-size: clamp(1.4rem, 1.286rem + 0.253vw, 1.6rem);   
 
-    span {
-        width: max-content;
+    a {
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
-    span:first-child {
-        margin-bottom: 0.5rem;
+    span {
+        width: max-content;
     }
 
     picture {
