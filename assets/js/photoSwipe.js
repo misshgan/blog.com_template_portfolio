@@ -10,6 +10,7 @@ export default function handlePhotoSwipe() {
     const lightbox = new PhotoSwipeLightbox({
         gallery: "#home-gallery",
         children: ".glightbox",
+        showHideAnimationType: 'zoom',
         pswpModule: PhotoSwipe,
         paddingFn: (viewportSize) => {
             return {
