@@ -1,0 +1,23 @@
+.membership {
+    padding-bottom: clamp(10rem, 7.152rem + 6.329vw, 15rem);
+
+    &__title {
+        font-size: clamp(3.6rem, 3.03rem + 1.266vw, 4.6rem);
+        font-weight: 600;
+    }
+    &__subtitle {
+        margin-top: 3rem;
+        font-size: clamp(1.8rem, 1.572rem + 0.506vw, 2.2rem);
+    }
+
+    &__title,
+    &__subtitle {
+        text-align: center;
+        width: min(63rem, 100%);
+    }
+
+    .tiers {
+        margin-top: clamp(4rem, 3.43rem + 1.266vw, 5rem);
+    }
+}
+
