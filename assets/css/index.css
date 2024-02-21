@@ -45,6 +45,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'components/_cta';
 @import 'components/_not-found';
 @import 'components/_author';
+@import 'components/_tiers';
 
 /* Sections/blocks */
 @import 'sections/_about-us';
@@ -53,6 +54,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'page/_tag-page';
 @import 'page/_author-page';
 @import 'page/_authentication';
+@import 'page/_membership';
 
 /* Post */
 @import 'post/_comments';
