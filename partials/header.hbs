@@ -3,18 +3,20 @@
         <nav class="flex items-center content-space-b">
             {{navigation classes='navigation--header'}}
 
-            {{#if @site.logo}}
-                {{> components/image
-                    image_type='site'
-                    picture_class='header__logo'
-                    image_url=@site.logo
-                    size_xs=true
-                    size_s=true
-                    loading='eager'
-                }}
-            {{else}}
-                <span class="site-name">{{@site.title}}</span>
-            {{/if}}
+            <a class="header__link" href="/">
+                {{#if @site.logo}}
+                    {{> components/image
+                        image_type='site'
+                        picture_class='header__logo'
+                        image_url=@site.logo
+                        size_xs=true
+                        size_s=true
+                        loading='eager'
+                    }}
+                {{else}}
+                    <span class="site-name">{{@site.title}}</span>
+                {{/if}}
+            </a>
 
             <div class="header__buttons flex items-center">
                 {{search}}
