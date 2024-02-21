@@ -1,0 +1,22 @@
+{{!< ../default}}
+
+<section class="membership">
+    <div class="wrapper container flex flex-col items-center">
+        {{#page}}
+            <h1 class="membership__title">
+                {{#if title}}
+                    {{title}}
+                {{else}}
+                    {{t 'Membership'}}
+                {{/if}}
+            </h1>
+            {{#if custom_excerpt}}
+                <p class="membership__subtitle">
+                    {{custom_excerpt}}
+                </p>
+            {{/if}}
+        {{/page}}
+    </div>
+    {{> members/tiers}}
+</section>
+
