@@ -34,8 +34,6 @@ production stylesheet in assets/built/screen.css using: npm run dev
 
 /* Default components */
 @import 'default/_badge';
-@import 'default/_comments';
-@import 'default/_content';
 @import 'default/_errors';
 
 /* Theme components */
@@ -46,6 +44,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'components/_cards-loop';
 @import 'components/_cta';
 @import 'components/_not-found';
+@import 'components/_author';
 
 /* Sections/blocks */
 @import 'sections/_about-us';
@@ -54,3 +53,8 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'page/_tag-page';
 @import 'page/_author-page';
 @import 'page/_authentication';
+
+/* Post */
+@import 'post/_comments';
+@import 'post/_content';
+@import 'post/_header';
