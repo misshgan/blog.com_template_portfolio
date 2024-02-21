@@ -88,10 +88,6 @@
 /* --------------------------------------------------------------------------
       12.Post — Content
       -------------------------------------------------------------------------- */
-      
-.post-wrap {
-    position: relative;
-}
 
 .post-content {
     font-size: 2rem;
@@ -775,23 +771,15 @@
 /* Figcaption
       –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .post-content figcaption {
-    font-size: 1.1rem;
-    line-height: 1.2;
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    text-align: center;
-    opacity: var(--opacity-one);
-}
+    line-height: normal;
+    width: max-content;
+    margin: 1rem auto 0;
+    font-size: clamp(1.4rem, 1.286rem + 0.253vw, 1.6rem);
+    color: #858585;
 
-.post-content figcaption a {
-    transition: opacity 0.1s ease;
-    text-decoration: underline;
-}
-
-.post-content figcaption a:hover {
-    opacity: 0.6;
-    color: var(--color-font-one);
+    a {
+        text-decoration: underline;
+    }
 }
 
 /* CTA
@@ -1260,8 +1248,8 @@
     .post-content .kg-video-card.kg-width-wide,
     .post-content .kg-image-card.kg-width-wide img,
     .post-content .kg-gallery-card .kg-gallery-container {
-        width: calc(100% + 170px + 170px);
-        margin-left: -170px;
+        width: calc(100% + 21rem + 21rem);
+        margin-left: -21rem;
     }
 }
 
