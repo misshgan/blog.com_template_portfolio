@@ -3,7 +3,7 @@
 .card--hero {
     width: 23.5%;
     height: max-content;
-    
+
     h3 {
         margin-top: 1rem;
         font-size: 1.6rem;
@@ -22,11 +22,11 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: all .8s;
+        transition: all 0.8s;
     }
 
     &:hover img {
-        transform: scale(1.2)
+        transform: scale(1.2);
     }
 }
 
@@ -34,7 +34,7 @@
 
 .card--gallery {
     position: relative;
-    transition: all .3s;
+    transition: all 0.3s;
     display: block;
 
     img {
@@ -69,27 +69,27 @@
         border-radius: 50%;
         background-color: rgba(0, 0, 0, 0.4);
         opacity: 0.5;
-        transition: all .5s;
+        transition: all 0.5s;
 
         svg {
             width: 2.4rem;
             height: 2.4rem;
-            transition: all .6s;
+            transition: all 0.6s;
         }
     }
 
-    &:hover  .card-open-icon {
+    &:hover .card-open-icon {
         transform: scale(1);
         opacity: 1;
     }
 }
 
-.card--gallery:nth-child(11n+1),
-.card--gallery:nth-child(11n+2) {
+.card--gallery:nth-child(11n + 1),
+.card--gallery:nth-child(11n + 2) {
     grid-column: span 2;
 }
 
-.card--gallery:nth-child(11n+7) {
+.card--gallery:nth-child(11n + 7) {
     grid-column: span 4;
 }
 
@@ -118,7 +118,8 @@
         overflow: hidden;
     }
 
-    figure, img {
+    figure,
+    img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -198,6 +199,65 @@
             font-size: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
             font-weight: 500;
         }
+    }
+}
+
+/* Tier card */
+
+.tier {
+    width: 32%;
+    background-color: #F6F6F6;
+    padding-bottom: 5rem;
+
+    &__title {
+        text-align: center;
+        padding: 1.5rem;
+        background-color: #F0F0F0;
+        font-size: 2.8rem;
+        font-weight: 500;
+    }
+    &__price {
+        margin-top: 2rem;
+        text-align: center;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+
+        font-size: 4rem;
+        font-weight: 600;
+
+        span:first-of-type {
+            font-size: 4rem;
+            font-weight: 600;
+        }
+
+        span {
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+    }
+    &__content {
+        padding: 3rem 3.4rem 3.4rem;
+    }
+    &__description {
+        font-size: 2rem;
+    }
+    &__benefits {
+        margin-top: 3rem;
+        font-size: 1.6rem;
+
+        li {
+            margin-left: 1.2rem;
+        }
+
+        li:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    .button {
+        margin-top: auto;
+        font-size: 1.8rem;
+        padding: 1.4rem 2.8rem;
     }
 }
 
