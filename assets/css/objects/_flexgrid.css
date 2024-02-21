@@ -2,7 +2,7 @@
 .wrapper {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  max-width: var(--global-max-width);
+  max-width: calc(var(--global-max-width) + var(--padding-base) * 2);
   margin: 0 auto;
   width: 100%;
 }
@@ -13,6 +13,6 @@
 }
 
 .container {
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: var(--padding-base);
+  padding-left: var(--padding-base);
 }
