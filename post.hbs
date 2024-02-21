@@ -19,4 +19,15 @@
         </div>
     </div>
 </article>
+{{^is 'page'}}
+    {{#if access}}
+        {{#if primary_tag}}
+            {{#get "posts" limit="2" filter="tags:{{primary_tag.slug}}+id:-{{id}}" include="tags" as |related_posts|}}
+                {{#if related_posts}}
+                    {{> components/loop is_related=true}}
+                {{/if}}
+            {{/get}}
+        {{/if}}
+    {{/if}}
+{{/is}}
 {{/post}}
