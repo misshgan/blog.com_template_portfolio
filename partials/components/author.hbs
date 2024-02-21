@@ -1,0 +1,20 @@
+{{#if is_post}}
+    <div class="author-card author-card--post flex items-center">
+        {{#if profile_image}}
+            {{> components/image
+                image_type='author'
+                image_class=''
+                image_url=profile_image
+                size_xs=true
+                size_s=true
+                loading='eager'
+            }}
+        {{/if}}
+        <div class="flex flex-col">
+            <span>{{name}}</span>
+            {{#if location}}
+                <span>{{location}}</span>
+            {{/if}}
+        </div>
+    </div>
+{{/if}}
