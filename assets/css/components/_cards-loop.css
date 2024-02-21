@@ -66,5 +66,9 @@
         column-gap: 2rem;
         row-gap: 4rem;
     }
+
+    .card--post {
+        width: calc(50% - 1rem);
+    }
     
 }
