@@ -78,5 +78,15 @@
             {{/foreach}}
         </div>
     </div>
-   
+{{else if is_related}}
+    <section class="related">
+        <div class="wrapper container">
+            <h2 class="section-title">{{t 'Read more'}}</h2>
+            <div class="cards-loop cards-loop--related flex">
+                {{#foreach posts}}
+                    {{> components/card is_post=true}}
+                {{/foreach}}
+            </div>
+        </div>
+    </section>
 {{/if}}
