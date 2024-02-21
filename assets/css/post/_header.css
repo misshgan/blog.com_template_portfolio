@@ -1,8 +1,7 @@
 .post-header {
 
-    .container {
-    }
-    .wrapper {
+    &.post-header--no-image .wrapper {
+        max-width: 1024px;
     }
 
     &__text {
@@ -10,7 +9,7 @@
     }
 
     h1 {
-        font-size: clamp(3.4rem, 2.83rem + 1.266vw, 4.4rem);
+        font-size: clamp(4rem, 3.43rem + 1.266vw, 5rem);
         font-weight: 600;
     }
 
@@ -32,6 +31,10 @@
     &__text {
         max-width: 49.2%;
         width: 100%;
+    }
+
+    &.post-header--no-image &__text {
+        max-width: 100%;
     }
 
     &__feature-image {
