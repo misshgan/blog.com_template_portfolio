@@ -2,3 +2,8 @@ a {
     text-decoration: none;
     color: inherit
 }
+
+a:not([class]):hover{
+
+    text-decoration: underline;
+}
