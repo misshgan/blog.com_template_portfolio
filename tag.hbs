@@ -9,6 +9,14 @@
             {{/if}}
         {{/tag}}
 
-        {{> components/loop is_posts=true is_tag_page=true}}
+        <div class="cards-loop cards-loop--posts">
+            <div class="cards-loop__header">
+                {{#tag}}
+                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                {{/tag}}
+            </div>
+
+            {{> components/loop is_posts=true}}
+        </div>
     </div>
 </section>

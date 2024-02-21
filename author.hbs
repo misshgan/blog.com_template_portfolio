@@ -40,6 +40,14 @@
             </div>
         {{/author}}
 
-        {{> components/loop is_posts=true is_author_page=true}}
+        <div class="cards-loop cards-loop--posts">
+            <div class="cards-loop__header">
+                {{#author}}
+                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                {{/author}}
+            </div>
+
+            {{> components/loop is_posts=true}}
+        </div>
     </div>
 </section>
