@@ -1,23 +1,21 @@
 {{!< default}}
 {{#post}}
 <article class="post-section">
-	<div class="container wrapper">
-        {{#match @page.show_title_and_feature_image}}
-            {{>posts/header}}
-        {{/match}}
-        <div class="post-wrap global-padding">
-            <div class="post-content">
-                {{#if access}}
-                {{content}}
-                {{else}}
-                {{#if html}}
-                <div class="members-cta-teaser">
-                    {{{html}}}
-                </div>
-                {{/if}}
-                {{>members/cta}}
-                {{/if}}
+    {{#match @page.show_title_and_feature_image}}
+        {{>posts/header}}
+    {{/match}}
+    <div class="container wrapper">
+        <div class="post-content">
+            {{#if access}}
+            {{content}}
+            {{else}}
+            {{#if html}}
+            <div class="members-cta-teaser">
+                {{{html}}}
             </div>
+            {{/if}}
+            {{>members/cta}}
+            {{/if}}
         </div>
     </div>
 </article>
