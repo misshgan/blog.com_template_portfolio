@@ -72,4 +72,8 @@
     --brakepoint-md: 48em;
     --brakepoint-lg: 62em;
     --brakepoint-xl: 75em;
+
+    /* Padding */
+
+    --padding-base: 2rem;
 }
