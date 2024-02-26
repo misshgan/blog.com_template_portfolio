@@ -55,6 +55,8 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'page/_author-page';
 @import 'page/_authentication';
 @import 'page/_membership';
+@import 'page/_account';
+@import 'page/_error';
 
 /* Post */
 @import 'post/_comments';
