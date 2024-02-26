@@ -1,35 +1,75 @@
 {{!< ../default}}
 
-<div class="gh-page">
-    <div class="gh-container">
-
-    {{#if @member.paid}}
-
-        {{!-- Logged in, paying member: Show account info --}}
-        <div class="account-box">
-            <h2 class="account-box-title">Nice, you're a subscriber!</h2>
-            <p>Hey! <strong>{{@member.email}}</strong> has an active {{@site.title}} account with access to all areas. You're all set, but if you need any help, get in touch with us and we'd be happy to help.</p>
+<section class="account">
+    <div class="container wrapper flex flex-col items-center">
+        <div class="account__details account-details">
+            <h1 class="account-details__title">{{t 'Your account'}}</h1>
+            <p class="account-details__subtitle">
+                {{#if @member.paid}}
+                    {{t "Nice, you’re a paying subscriber! You’ve an active account with access to all posts."}}
+                {{else if @member}}
+                    {{#if @site.paid_members_enabled}}
+					    {{t "Currently, you’re not a paying subscriber. You’ve an active account with access to posts for subscribers only."}}
+					{{else}}
+					    {{t "You’ve an active account with access to posts for subscribers."}}
+					{{/if}}
+                {{/if}}
+            </p>
         </div>
-
-    {{else if @member}}
-
-        {{!-- Logged in, not paying: Link to checkout --}}
-        <div class="account-box">
-            <h1 class="account-box-title">Currently, you're not a subscriber</h1>
-            <p>Hey there! <strong>{{@member.email}}</strong> is subscribed to free updates from {{@site.title}}, but doesn't have a paid subscription to unlock full access.</p>
-            <div class="authbox-signup">
-                <a class="button primary" href="/signup/">
-                    <span class="button-content">Subscribe now</span>
-                </a>
+        {{#if @member.paid}}    
+            {{#foreach @member.subscriptions}}
+                <div class="subscription-info flex content-center {{#match @number ">" 1}}subscription-info--additional{{/match}}">
+                    <div class="subscription-info__column">
+                        <div>
+                            <label>{{t 'Email address:'}}</label>
+                            <span>{{customer.email}}</span>
+                        </div>
+                         <div>
+                            <label>{{t 'Card:'}}</label>
+                            <span>**** **** **** {{default_payment_card_last4}}</span>
+                        </div>
+                    </div>
+                    <div class="subscription-info__column">
+                        <div>
+                            <label>{{t "Your plan:"}}</label>
+                            <span>{{tier.name}} — {{price plan}} / {{plan.interval}}</span></span>
+                        </div>
+                        <div>
+                            <label>{{t "Next bill date:"}}</label>
+                            <span>{{date current_period_end format="DD MMM YYYY"}}</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="subscription-info-buttons flex items-center content-center">
+                    {{#if @last}}
+                        <a class="button" href="javascript:" data-members-edit-billing>{{t 'Edit billing info'}}</a>
+                    {{/if}}
+                    {{cancel_link
+                        class='button button--transparent subscription-info__cancel-link'
+                        errorClass="cancel-error"
+                        cancelLabel="Cancel!"
+                        continueLabel="Continue!"
+                    }}
+                </div>
+            {{/foreach}}
+        {{else}}
+            <div class="account-details__subscription-info subscription-info flex content-center">
+                <div class="subscription-info__column">
+                    <div>
+                        <label>{{t 'Email address:'}}</label>
+                        <span>{{@member.email}}</span>
+                    </div>
+                </div>
+                <div class="subscription-info__column">
+                    <div>
+                        <label>{{t "Your plan:"}}</label>
+                        <span>{{t 'Free'}}</span>
+                    </div>
+                </div>
             </div>
-        </div>
-
-    {{else}}
-
-        {{!-- Not logged in: Redirect to signin --}}
-        <script>window.location = '{{@site.url}}/signin/';</script>
-
-    {{/if}}
-
+        {{/if}}
+        {{^if @member.paid}}
+            {{> members/tiers is_account=true}}
+        {{/if}}
     </div>
-</div>
+</section>
