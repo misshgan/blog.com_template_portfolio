@@ -20,8 +20,13 @@
 
             <div class="header__buttons flex items-center">
                 {{search}}
-                <a href="/sign-in/" class="button button--minimal">Sign in</a>
-                <a href="/sign-up/" class="button button button--header">Sign up</a>
+                {{#if @member}}
+                    <a href="javascript:" data-members-signout class="button button--minimal">Sign out</a>
+                    <a href="/account/" class="button button--minimal">Account</a>
+                {{else}}
+                    <a href="/sign-in/" class="button button--minimal">Sign in</a>
+                    <a href="/sign-up/" class="button button button--header">Sign up</a>
+                {{/if}}
             </div>
         </nav>
     </div>
