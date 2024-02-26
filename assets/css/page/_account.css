@@ -1,0 +1,93 @@
+.account {
+    padding-bottom: clamp(10rem, 7.152rem + 6.329vw, 15rem);
+
+    .container {
+    }
+    .wrapper {
+    }
+}
+
+.account-details {
+    padding: clamp(2.5rem, 1.646rem + 1.899vw, 4rem) 2rem clamp(2rem, 1.715rem + 0.633vw, 2.5rem);
+    background-color: #F6F6F6;
+    width: min(82rem, 100%);
+
+    &__title {
+        text-align: center;
+        font-size: clamp(3.2rem, 2.516rem + 1.519vw, 4.4rem);
+        font-weight: 600;
+    }
+    &__subtitle {
+        margin: 0 auto;
+        text-align: center;
+        margin-top: clamp(1rem, 0.43rem + 1.266vw, 2rem);
+        font-size: clamp(1.6rem, 1.258rem + 0.759vw, 2.2rem);
+        max-width: 50rem;
+    }
+    &__subscription-info {
+    }
+}
+.subscription-info {
+    padding: clamp(2.5rem, 1.646rem + 1.899vw, 4rem);
+    width: min(82rem, 100%);
+    background-color: #F6F6F6;
+    column-gap: 12rem;
+
+    &:not(.subscription-info--additional) {
+        border-top: 1px solid #CDCDCD;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+    &__column > div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.3rem;
+    }
+    label {
+        font-size: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
+        color: #858585;
+    }
+    span {
+        font-size: clamp(1.8rem, 1.572rem + 0.506vw, 2.2rem);
+        font-weight: 500;
+
+        span {
+            text-decoration: underline;
+        }
+    }
+    
+}
+
+.subscription-info-buttons {
+    margin-top: clamp(3rem, 2.43rem + 1.266vw, 4rem);
+    column-gap: clamp(2rem, 1.715rem + 0.633vw, 2.5rem);
+    position: relative;
+
+    .button {
+        padding: 1rem clamp(2.4rem, 1.83rem + 1.266vw, 3.4rem);
+        font-size: clamp(1.6rem, 1.486rem + 0.253vw, 1.8rem);
+        font-weight: 400;
+    }
+
+    .cancel-error {
+        opacity: 0;
+        transition: all .5s;
+        position: absolute;
+        top: calc(100% + 1.4rem);
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--color-error);
+        width: max-content;
+        max-width: 100%;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    .button.error + .cancel-error {
+        opacity: 1;
+    }
+}
