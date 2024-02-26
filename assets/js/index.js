@@ -3,18 +3,17 @@
 // Import CSS
 import "../css/index.css";
 
-// // Import JS
-// import menuOpen from "./menuOpen";
-// import infiniteScroll from "./infiniteScroll";
+import { handleHomeGalleryLightbox } from './photoSwipe';
+import { handlePostContentLightbox } from "./photoSwipe";
 
-import handlePhotoSwipe from './photoSwipe';
+if (document.getElementById('home-gallery')) {
+    handleHomeGalleryLightbox();
+}
 
-handlePhotoSwipe();
+if (document.getElementById('post-content')) {
+    handlePostContentLightbox();
+}
 
 // Lazyload plugin
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-
-// Call the menu and infinite scroll functions
-// menuOpen();
-// infiniteScroll();
