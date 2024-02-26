@@ -258,7 +258,7 @@
     text-decoration: underline;
 }
 
-.post-content *:not(.kg-card) a:hover:not(.button, .kg-btn, .kg-product-card-button, .kg-header-card-button ) {
+.post-content *:not(.kg-card) a:hover:not(.button, .kg-btn, .kg-product-card-button, .kg-header-card-button, small > a ) {
     color: var(--ghost-accent-color);
 }
 
@@ -811,7 +811,11 @@
     margin-bottom: 10vh;
     padding: 6vh 3vw;
     text-align: center;
-    background-color: var(--color-five);
+    background-color: var(--ghost-accent-color);
+
+    & > *:not(.button) {
+        color: var(--color-brand-contrast)
+    }
 }
 
 .post-content .members-cta h2 {
