@@ -1,17 +1,31 @@
 .button {
     font-size: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--ghost-accent-color);
+    color: var(--color-brand-contrast);
     cursor: pointer;
     padding: 2rem 4.2rem;
     display: block;
     width: max-content;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--ghost-accent-color);
+    transition: all .2s;
+
+    &:hover {
+        color: var(--ghost-accent-color);
+        background-color: transparent;
+    }
 
     &--content-cta {
         margin-bottom: 2rem;
+        color: var(--ghost-accent-color);
+        background-color: var(--color-brand-contrast);
+    }
+
+    &--content-cta:hover {
+        color: var(--color-brand-contrast);
+        background-color: var(--ghost-accent-color);
+        border-color: var(--color-brand-contrast);
     }
 
     &--header {
@@ -25,11 +39,20 @@
         border: none;
     } 
 
+    &--minimal:hover {
+        text-decoration: underline;
+    }
+
     &--transparent {
         background-color: transparent;
-        color: inherit;
-        border: 1px solid var(--color-black);
+        color: var(--ghost-accent-color);
+        border: 1px solid var(--ghost-accent-color);
         margin-left: unset;
         margin-right: unset;
+    }
+
+    &--transparent:hover {
+        color: var(--color-brand-contrast);
+        background-color: var(--ghost-accent-color)
     }
 }
