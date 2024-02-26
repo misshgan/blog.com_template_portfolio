@@ -8,6 +8,7 @@
     width: max-content;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid var(--color-black);
 
     &--content-cta {
         margin-bottom: 2rem;
@@ -21,6 +22,7 @@
         background-color: transparent;
         color: inherit;
         padding: 0;
+        border: none;
     } 
 
     &--transparent {
