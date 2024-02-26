@@ -1,0 +1,26 @@
+.page-error {
+    .container {
+    }
+    .wrapper {
+        text-align: center;
+    }
+
+    &__title {
+        font-size: clamp(15rem, 12.152rem + 6.329vw, 20rem);
+        font-weight: 500;
+        margin-top: 10rem;
+        line-height: 1;
+    }
+    &__description {
+        margin-top: clamp(1.5rem, 0.646rem + 1.899vw, 3rem);
+        font-size: clamp(2.2rem, 1.403rem + 1.772vw, 3.6rem);
+        font-weight: 500;
+    }
+
+    .button {
+        margin-top: clamp(5rem, 4.43rem + 1.266vw, 6rem);
+        padding-left: clamp(2.6rem, 2.372rem + 0.506vw, 3rem);
+        padding-right: clamp(2.6rem, 2.372rem + 0.506vw, 3rem);
+    }
+    
+}
