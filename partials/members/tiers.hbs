@@ -1,6 +1,8 @@
-<div class="tiers">
+<div class="tiers {{#if is_account}}tiers--account{{/if}}">
     <div class="wrapper container">
-        <small>See all prices</small>
+        {{^if is_account}}
+            <small>See all prices</small>
+        {{/if}}
 
         <div class="tiers-switch flex items-center" data-active-price="monthly">
             <button data-price="monthly">{{t "Monthly"}}</button>
@@ -22,7 +24,9 @@
             {{/get}}
         </div>
 
-        <p>{{t 'Already have an account?'}} <a href="/sign-in/">{{t 'Sign in'}}</a></p>
+        {{^if is_account}}
+            <p>{{t 'Already have an account?'}} <a href="/sign-in/">{{t 'Sign in'}}</a></p>
+        {{/if}}
     </div>
 </div>
 
