@@ -9,3 +9,14 @@ picture {
    border-radius: inherit; 
    width: 100%;
 }
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: max-content;
+  height: 6rem;
+
+  img {
+    height: 100%;
+  }
+}
