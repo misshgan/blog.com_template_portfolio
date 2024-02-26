@@ -16,7 +16,7 @@
 /* Gallery section cards loop */
 
 .gallery {
-    margin-top: clamp(12rem, 10.291rem + 3.797vw, 15rem);
+    margin: clamp(12rem, 10.291rem + 3.797vw, 15rem) 0;
 
     .cards-loop--gallery {
         display: grid;
