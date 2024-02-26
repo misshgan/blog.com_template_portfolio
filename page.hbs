@@ -1,29 +1,33 @@
 {{!< default}}
-
 {{#post}}
-<article class="gh-article {{post_class}}">
+<article class="post-section">
     {{#match @page.show_title_and_feature_image}}
-    <header class="gh-header gh-canvas">
-        <h1 class="gh-title">{{title}}</h1>
-
-        {{#if custom_excerpt}}
-            <p class="gh-excerpt">{{custom_excerpt}}</p>
-        {{/if}}
-
-        {{#if feature_image}}
-            <figure class="gh-feature-image">
-                <img src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
-                {{#if feature_image_caption}}
-                    <figcaption>{{feature_image_caption}}</figcaption>
-                {{/if}}
-            </figure>
-        {{/if}}
-    </header>
+        {{>posts/header}}
     {{/match}}
-
-    <div class="gh-content gh-canvas">
-        {{content}}
+    <div class="container wrapper">
+        <div class="post-content">
+            {{#if access}}
+            {{content}}
+            {{else}}
+            {{#if html}}
+            <div class="members-cta-teaser">
+                {{{html}}}
+            </div>
+            {{/if}}
+            {{>members/cta}}
+            {{/if}}
+        </div>
     </div>
-
 </article>
+{{^is 'page'}}
+    {{#if access}}
+        {{#if primary_tag}}
+            {{#get "posts" limit="2" filter="tags:{{primary_tag.slug}}+id:-{{id}}" include="tags" as |related_posts|}}
+                {{#if related_posts}}
+                    {{> components/loop is_related=true}}
+                {{/if}}
+            {{/get}}
+        {{/if}}
+    {{/if}}
+{{/is}}
 {{/post}}
