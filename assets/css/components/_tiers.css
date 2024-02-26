@@ -2,6 +2,12 @@
     border-top: 1px solid #CDCDCD;
     padding-top: 1rem;
 
+    &--account {
+        border-top: none;
+        padding-top: 0;
+        margin-top: clamp(3rem, 0.152rem + 6.329vw, 8rem);
+    }
+
     .tiers-switch[data-active-price="yearly"] + .tiers-cards [data-monthly],
     .tiers-switch[data-active-price="monthly"] + .tiers-cards [data-yearly] {
         display: none;
