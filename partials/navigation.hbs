@@ -1,10 +1,38 @@
-<ul class="navigation {{#if is_footer}} flex-col{{/if}}{{#if isSecondary}} secondary{{/if}} flex {{^if is_footer}} items-center{{/if}} {{classes}}">
-  {{#foreach navigation}}
-    <li class="{{link_class for=(url) class=(concat "nav-" slug)}}{{#match label.[0] "-"}} is-subitem{{/match}}" 
-      data-label="{{label}}" data-length="{{label.length}}">
-      <a title="{{label}}" href="{{url absolute="true"}}">
-        <span>{{label}}</span>
-      </a>
-    </li>
-  {{/foreach}}
-</ul>
+{{#if is_header}}
+  <ul class="navigation {{#if is_footer}} flex-col{{/if}}{{#if isSecondary}} secondary{{/if}} flex {{^if is_footer}} items-center{{/if}} {{classes}}">
+    {{#foreach navigation to='3'}}
+      <li class="{{link_class for=(url) class=(concat "nav-" slug)}}{{#match label.[0] "-"}} is-subitem{{/match}}" 
+        data-label="{{label}}" data-length="{{label.length}}">
+        <a title="{{label}}" href="{{url absolute="true"}}">
+          <span>{{label}}</span>
+        </a>
+      </li>
+    {{/foreach}}
+    {{#if navigation from='4'}}
+      <li id="header-nav-dropdown-target" class="navigation-dropdown hidden">
+        {{> icons/dots}}
+        <ul class="flex flex-col">
+          {{#foreach navigation from='4'}}
+            <li class="{{link_class for=(url) class=(concat "nav-" slug)}}{{#match label.[0] "-"}} is-subitem{{/match}}" 
+              data-label="{{label}}" data-length="{{label.length}}">
+              <a title="{{label}}" href="{{url absolute="true"}}">
+                <span>{{label}}</span>
+              </a>
+            </li>
+          {{/foreach}}
+        </ul>
+      </li>
+    {{/if}}
+  </ul>
+{{else if is_footer}}
+  <ul class="navigation {{#if is_footer}} flex-col{{/if}}{{#if isSecondary}} secondary{{/if}} flex {{^if is_footer}} items-center{{/if}} {{classes}}">
+    {{#foreach navigation}}
+      <li class="{{link_class for=(url) class=(concat "nav-" slug)}}{{#match label.[0] "-"}} is-subitem{{/match}}" 
+        data-label="{{label}}" data-length="{{label.length}}">
+        <a title="{{label}}" href="{{url absolute="true"}}">
+          <span>{{label}}</span>
+        </a>
+      </li>
+    {{/foreach}}
+  </ul>
+{{/if}}
