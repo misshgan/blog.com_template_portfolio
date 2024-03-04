@@ -1,6 +1,7 @@
 /* Hero section cards loop */
 
 .hero {
+    margin-bottom: clamp(6rem, 5.146rem + 1.899vw, 7.5rem);
     &__title {
         font-size: clamp(3.6rem, 2.916rem + 1.519vw, 4.8rem);
         font-weight: 600;
@@ -9,14 +10,17 @@
 
     .cards-loop--hero {
         margin-top: 2rem;
-        column-gap: 2%;
+    }
+
+    .swiper {
+        padding-bottom: clamp(6rem, 5.146rem + 1.899vw, 7.5rem);
     }
 }
 
 /* Gallery section cards loop */
 
 .gallery {
-    margin: clamp(12rem, 10.291rem + 3.797vw, 15rem) 0;
+    margin: 0 0 clamp(12rem, 10.291rem + 3.797vw, 15rem);
 
     .cards-loop--gallery {
         display: grid;
