@@ -23,6 +23,7 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'utilities/_animation';
 @import 'utilities/_flex';
 @import 'utilities/_states';
+@import 'utilities/_swiper';
 
 /* Elements */ 
 @import 'elements/_body';
