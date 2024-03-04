@@ -7,6 +7,25 @@ import { handleHomeGalleryLightbox } from './photoSwipe';
 import { handlePostContentLightbox } from "./photoSwipe";
 import { handleHomeHeroSwiper } from "./swiper";
 
+function handleHeaderDropdown() {
+    const target = document.querySelector('#header-nav-dropdown-target');
+    const dropdownBody = target.querySelector('ul')
+    if (!target) {return;}
+
+    if (dropdownBody.querySelector('li')) {
+        target.classList.remove('hidden')
+    }
+
+    target.addEventListener('mouseover', () => {
+        dropdownBody.classList.add('active')
+    })
+    target.addEventListener('mouseout', () => {
+        dropdownBody.classList.remove('active')
+    })
+}
+
+handleHeaderDropdown();
+
 if (document.getElementById('home-hero-swiper')) {
     handleHomeHeroSwiper();
 }
