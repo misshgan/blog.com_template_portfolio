@@ -1,13 +1,54 @@
 .navigation {
     list-style-type: none;
     column-gap: clamp(2rem, -1.254rem + 4.237vw, 4rem);
+    position: relative;
 
     li {
         font-size: 2rem;
         font-weight: 500;
     }
+
+    li.navigation-dropdown {
+        display: flex;
+        margin-left: -2rem;
+        position: absolute;
+        left: calc(100% + 3rem);
+        top: calc(50% - 1rem);
+
+        display: flex;
+    }
+
+    li.navigation-dropdown.hidden {
+        display: none;
+    }
+
+    svg {
+        height: 2rem;
+        width: auto;
+        object-fit: cover;
+        cursor: pointer;
+    }
 }
 
+.navigation-dropdown ul {  
+    display: none;
+    row-gap: 1rem;
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0 2rem;
+
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 2rem;
+    z-index: 100;
+    width: max-content;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.navigation-dropdown ul.active {
+    display: flex;
+    animation: fadeIn 0.5s;
+}
 .navigation--is-footer {
     column-gap: unset;
     row-gap: 1.5rem;
