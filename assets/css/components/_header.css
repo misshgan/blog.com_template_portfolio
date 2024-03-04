@@ -1,11 +1,10 @@
 .header {
-    .container {
-    }
-    .wrapper {
-    }  
-    
     nav {
         position: relative;
+
+        @media (max-width:1024px) {
+            display: none;
+        }
     }
 
     &__logo {
