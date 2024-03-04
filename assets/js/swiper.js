@@ -3,6 +3,7 @@ import Swiper from "swiper";
 import { Scrollbar } from 'swiper/modules'
 // import Swiper styles
 import "swiper/css";
+import "swiper/css/scrollbar";
 
 export function handleHomeHeroSwiper() {
     const homeHeroSwiper = new Swiper("#home-hero-swiper", {
