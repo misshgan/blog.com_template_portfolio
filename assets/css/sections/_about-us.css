@@ -19,10 +19,18 @@
 
     picture, &__text {
         max-width: 50%;
+        height: max-content;
     }
 
     img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
+.about-us--no-image {
+    .about-us__text {
+        max-width: 100%;
+    }
+}
