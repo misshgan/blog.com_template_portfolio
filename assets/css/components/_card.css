@@ -36,6 +36,12 @@
     position: relative;
     transition: all 0.3s;
     display: block;
+    aspect-ratio: 1 / 1;
+
+    @media (max-width:1024px) {
+        grid-column: unset;
+        aspect-ratio: 1 / 0.8
+    }
 
     img {
         width: 100%;
@@ -76,6 +82,19 @@
             height: 2rem;
             transition: all 0.6s;
         }
+
+        @media (max-width:768px) {
+            bottom: 1.4rem;
+            right: 1.4rem;
+            opacity: 0.95;
+            transform: scale(1);
+        }
+
+        @media (max-width:500px) {
+            transform: scale(0.8);
+            bottom: 1rem;
+            right: 1rem;
+        }
     }
 
     &:hover .card-open-icon {
@@ -87,10 +106,12 @@
 .card--gallery:nth-child(11n + 1),
 .card--gallery:nth-child(11n + 2) {
     grid-column: span 2;
+    aspect-ratio: 1 / 0.8;
 }
 
 .card--gallery:nth-child(11n + 7) {
     grid-column: span 4;
+    aspect-ratio: 4 / 1.6;
 }
 
 /* Category section card */
