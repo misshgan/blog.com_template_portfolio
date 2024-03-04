@@ -7,20 +7,23 @@
             {{else}}
                 {{@site.title}}
             {{/if}}</h1>
-            <div class="cards-loop cards-loop--hero flex">
-                {{#if @custom.choose_categories_for_the_first_section_on_the_homepage}}
-                    {{#get "tags" limit='all' filter="slug:[{{@custom.choose_categories_for_the_first_section_on_the_homepage}}]" order='name asc' as | categories |}}
-                        {{#foreach categories}}
-                            {{> components/card is_hero_card=true}}
-                        {{/foreach}}
-                    {{/get}}
-                {{else}}
-                    {{#get "tags" limit='all' order='name asc' as |category|}}
-                        {{#foreach category from='1' to='4'}}
-                            {{> components/card is_hero_card=true}}
-                        {{/foreach}}
-                    {{/get}}
-                {{/if}}
+            <div class="swiper">
+                <div class="swiper-scrollbar"></div>
+                <div class="cards-loop cards-loop--hero flex swiper-wrapper">
+                    {{#if @custom.choose_categories_for_the_first_section_on_the_homepage}}
+                        {{#get "tags" limit='all' filter="slug:[{{@custom.choose_categories_for_the_first_section_on_the_homepage}}]" order='name asc' as | categories |}}
+                            {{#foreach categories}}
+                                {{> components/card is_hero_card=true classes='swiper-slide'}}
+                            {{/foreach}}
+                        {{/get}}
+                    {{else}}
+                        {{#get "tags" limit='all' order='name asc' as |category|}}
+                            {{#foreach category from='1' to='4'}}
+                                {{> components/card is_hero_card=true classes='swiper-slide'}}
+                            {{/foreach}}
+                        {{/get}}
+                    {{/if}}
+                </div>
             </div>
         </div>
     </section>
