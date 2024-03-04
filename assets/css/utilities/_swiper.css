@@ -1,0 +1,13 @@
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+
+
+    --swiper-scrollbar-border-radius: 10px;
+    --swiper-scrollbar-top: auto;
+    --swiper-scrollbar-bottom: 2rem;
+    --swiper-scrollbar-left: auto;
+    --swiper-scrollbar-right: 4px;
+    --swiper-scrollbar-sides-offset: 1%;
+    --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1);
+    --swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 0.5);
+    --swiper-scrollbar-size: 4px;
+}
