@@ -5,6 +5,11 @@ import "../css/index.css";
 
 import { handleHomeGalleryLightbox } from './photoSwipe';
 import { handlePostContentLightbox } from "./photoSwipe";
+import { handleHomeHeroSwiper } from "./swiper";
+
+if (document.getElementById('home-hero-swiper')) {
+    handleHomeHeroSwiper();
+}
 
 if (document.getElementById('home-gallery')) {
     handleHomeGalleryLightbox();
