@@ -2,6 +2,12 @@
     .container {
         padding-top: clamp(5rem, 4.43rem + 1.266vw, 6rem);
         padding-bottom: 2rem;
+
+        @media (max-width:1024px) {
+            justify-content: unset;
+            column-gap: 4rem;
+            row-gap: 4rem;
+        }
     }
     .wrapper {
     }
@@ -35,6 +41,10 @@
         margin-top: 6rem;
         min-width: 100%;
         text-align: center;
+
+        @media (max-width:1024px) {
+            margin-top: 0;
+        }
 
         p {
             font-size: clamp(1.2rem, 0.972rem + 0.506vw, 1.6rem);
