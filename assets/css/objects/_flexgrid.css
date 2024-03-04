@@ -13,6 +13,6 @@
 }
 
 .container {
-  padding-right: var(--padding-base);
-  padding-left: var(--padding-base);
+  padding-right: clamp(1.4rem, 1.058rem + 0.759vw, 2rem);
+  padding-left: clamp(1.4rem, 1.058rem + 0.759vw, 2rem);
 }
