@@ -9,11 +9,13 @@
             row-gap: 4rem;
         }
     }
-    .wrapper {
+
+    &__column:first-child {
+        @media (max-width:600px) {
+            width: 100%;
+        }
     }
 
-    &__column {
-    }
     &__logo {
         height: 4rem;
 
