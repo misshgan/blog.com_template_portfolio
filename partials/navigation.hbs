@@ -1,5 +1,6 @@
-{{#if is_header}}
-  <ul class="navigation {{#if is_footer}} flex-col{{/if}}{{#if isSecondary}} secondary{{/if}} flex {{^if is_footer}} items-center{{/if}} {{classes}}">
+<ul class="navigation flex {{classes}}">
+  {{#if is_header}}
+    
     {{#foreach navigation to='3'}}
       <li class="{{link_class for=(url) class=(concat "nav-" slug)}}{{#match label.[0] "-"}} is-subitem{{/match}}" 
         data-label="{{label}}" data-length="{{label.length}}">
@@ -23,9 +24,9 @@
         </ul>
       </li>
     {{/if}}
-  </ul>
-{{else if is_footer}}
-  <ul class="navigation {{#if is_footer}} flex-col{{/if}}{{#if isSecondary}} secondary{{/if}} flex {{^if is_footer}} items-center{{/if}} {{classes}}">
+
+  {{else}}
+
     {{#foreach navigation}}
       <li class="{{link_class for=(url) class=(concat "nav-" slug)}}{{#match label.[0] "-"}} is-subitem{{/match}}" 
         data-label="{{label}}" data-length="{{label.length}}">
@@ -34,5 +35,6 @@
         </a>
       </li>
     {{/foreach}}
-  </ul>
-{{/if}}
+
+  {{/if}}
+</ul>
