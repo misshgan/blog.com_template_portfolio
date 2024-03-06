@@ -112,9 +112,7 @@ export function handlePostContentLightbox() {
             children: ".pswp-lightbox-image",
             paddingFn: (viewportSize) => ({
                 top: 40,
-                bottom: 40,
-                left: 75,
-                right: 75
+                bottom: 40
             }),
         });
 
