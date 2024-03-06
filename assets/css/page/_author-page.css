@@ -9,14 +9,17 @@
     .section-title {
         font-size: clamp(3.2rem, 2.516rem + 1.519vw, 4.4rem);
         margin-bottom: 1.5rem;
+        text-align: center;
     }
     &__profile-image {
         height: clamp(10rem, 7.152rem + 6.329vw, 15rem);
         width: clamp(10rem, 7.152rem + 6.329vw, 15rem);
-        border-radius: 50%;
+        
         margin-bottom: 1rem;
 
         img {
+            border-radius: 50%;
+            object-fit: cover;
             width: 100%;
             height: 100%;
         }
