@@ -73,10 +73,18 @@
     .cards-loop--related {
         column-gap: 2rem;
         row-gap: 4rem;
+
+        @media (max-width:768px) {
+            flex-direction: column;
+        }
     }
 
     .card--post {
         width: calc(50% - 1rem);
+
+        @media (max-width:768px) {
+            width: 100%;
+        }
     }
     
 }
