@@ -120,19 +120,44 @@
     display: block;
     position: relative;
 
+    @media (max-width:768px) {
+        width: 100%;
+        aspect-ratio: 2 / 1;
+    }
+
     &.card--category-1 {
         width: 100%;
-        height: clamp(17.5rem, 0.127rem + 38.608vw, 48rem);
+        aspect-ratio: 2.58 / 1;
+
+        @media (max-width:768px) {
+            width: 100%;
+            aspect-ratio: 2 / 1;
+        }
     }
 
     &.card--category-2 {
         width: calc(50% - 1rem);
-        height: clamp(17.5rem, 4.684rem + 28.481vw, 40rem);
+        aspect-ratio: 1.57 / 1;
+
+        @media (max-width:768px) {
+            width: 100%;
+            aspect-ratio: 2 / 1;
+        }
     }
 
     &.card--category-3 {
         width: calc(25% - 1.5rem);
-        height: clamp(17.5rem, 10.665rem + 15.19vw, 29.5rem);
+        aspect-ratio: 1 / 1;
+
+        @media (max-width:1024px) {
+            width: calc(50% - 1rem);
+            aspect-ratio: 1.57 / 1;
+        }
+
+        @media (max-width:768px) {
+            width: 100%;
+            aspect-ratio: 2 / 1;
+        }
     }
 
     figure {
@@ -156,6 +181,7 @@
         bottom: 1.5rem;
         left: 50%;
         transform: translateX(-50%);
+        width: 90%;
 
         font-weight: 500;
         color: var(--color-white);
@@ -182,14 +208,30 @@
     width: calc(50% - 1rem);
     height: max-content;
 
-    &.card--post-1 {
+    @media (max-width:768px) {
         width: 100%;
     }
 
     figure {
-        height: clamp(29rem, 17.038rem + 26.582vw, 50rem);
         overflow: hidden;
         margin-bottom: clamp(2rem, 1.829rem + 0.38vw, 2.3rem);
+        aspect-ratio: 1.22 / 1;
+
+        @media (max-width:768px) {
+            aspect-ratio: 2 / 1;
+        }
+    }
+
+    &.card--spl-order:first-child {
+        width: 100%;
+    }
+
+    &.card--spl-order:first-child figure {
+        aspect-ratio: 2.48 / 1;
+
+        @media (max-width:768px) {
+            aspect-ratio: 2 / 1;
+        }
     }
 
     figure:hover img {
@@ -215,6 +257,7 @@
     .card__tags {
         margin-top: clamp(1.5rem, 1.215rem + 0.633vw, 2rem);
         column-gap: 1.5rem;
+        row-gap: 1rem;
 
         span {
             font-size: clamp(1.6rem, 1.372rem + 0.506vw, 2rem);
@@ -229,6 +272,15 @@
     width: 32%;
     background-color: #F6F6F6;
     padding-bottom: 5rem;
+
+    @media (max-width:1024px) {
+        width: 48%;
+    }
+
+    @media (max-width:768px) {
+        width: 100%;
+        max-width: 50rem;
+    }
 
     &__title {
         text-align: center;
