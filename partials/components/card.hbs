@@ -8,6 +8,8 @@
                 size_xs=true
                 size_s=true
                 size_m=true
+                size_l=true
+                size_xl=true
                 loading='lazy'
             }}
             <h3>#{{name}}</h3>
@@ -59,13 +61,15 @@
                 size_xs=true
                 size_s=true
                 size_m=true
+                size_l=true
+                size_xl=true
                 loading='lazy'
             }}
             <caption><span class="card__caption">{{name}}</span></caption>
         </figure>
     </a>
 {{else if is_post}}
-    <article class="card card--post {{#has number='1'}}card--post-1{{/has}}">
+    <article class="card card--post {{classes}}">
         {{#if feature_image}}
             <a href="{{url}}">
                 <figure>
@@ -77,6 +81,7 @@
                         size_s=true
                         size_m=true
                         size_l=true
+                        size_xl=true
                         loading='lazy'
                     }}
                 </figure>
@@ -84,7 +89,7 @@
         {{/if}}
         <h3><a href="{{url}}">{{title}}</a></h3>
         {{#if tags}}
-            <div class="card__tags flex items-center">
+            <div class="card__tags flex items-center flex-wrap">
                 {{#foreach tags}}
                     <span>#{{name}}</span>
                 {{/foreach}}
