@@ -57,3 +57,28 @@
         font-size: clamp(2rem, 1.886rem + 0.253vw, 2.2rem);
     }
 }
+
+.navigation--is-header {
+    @media (max-width:1024px) {
+        display: none;
+    }
+}
+
+.navigation--is-footer {
+    flex-direction: column;
+}
+
+.navigation--is-mobile,
+.navigation--is-mobile-secondary {
+    row-gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+
+    li {
+        font-size: 2.2rem;
+    }
+}
+
+.navigation--is-mobile-secondary {
+    margin-top: 4rem;
+}
