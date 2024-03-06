@@ -1,7 +1,7 @@
 <header class="header">
     <div class="container wrapper">
         <nav class="flex items-center content-space-b">
-            {{navigation classes='navigation--header' is_header=true}}
+            {{navigation classes='navigation--is-header' is_header=true}}
 
             <a class="header__link" href="/">
                 {{#if @site.logo}}
@@ -20,14 +20,19 @@
 
             <div class="header__buttons flex items-center">
                 {{search}}
-                {{#if @member}}
-                    <a href="javascript:" data-members-signout class="button button--minimal">Sign out</a>
-                    <a href="/account/" class="button button--minimal">Account</a>
-                {{else}}
-                    <a href="/sign-in/" class="button button--minimal">Sign in</a>
-                    <a href="/sign-up/" class="button button button--header">Sign up</a>
-                {{/if}}
+                <div class="header__buttons-desktop flex items-center">
+                    {{#if @member}}
+                        <a href="javascript:" data-members-signout class="button button--minimal">Sign out</a>
+                        <a href="/account/" class="button button--minimal">Account</a>
+                    {{else}}
+                        <a href="/sign-in/" class="button button--minimal">Sign in</a>
+                        <a href="/sign-up/" class="button button button--header">Sign up</a>
+                    {{/if}}
+                </div>
+                <div class="header__mobile-target js-mobile-menu-target">{{> icons/burger}}</div>
             </div>
         </nav>
     </div>
+
+    {{> components/mobile-menu}}
 </header>
