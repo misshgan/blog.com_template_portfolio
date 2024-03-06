@@ -4,6 +4,13 @@
         max-width: 1024px;
     }
 
+    .container {
+        @media (max-width:1024px) {
+            flex-direction: column;
+            row-gap: 3rem;
+        }
+    }
+
     &__text {
 
     }
@@ -31,6 +38,10 @@
     &__text {
         max-width: 49.2%;
         width: 100%;
+
+        @media (max-width:1024px) {
+            max-width: 100%;
+        }
     }
 
     &.post-header--no-image &__text {
@@ -38,11 +49,11 @@
     }
 
     &__feature-image {
-        aspect-ratio: 1.22/1;
 
         img {
             object-fit: cover;
             object-position: center;
+            aspect-ratio: 1.22/1;
         }
 
         img, picture {
