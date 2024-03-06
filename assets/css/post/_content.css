@@ -517,6 +517,11 @@
     padding: 8px;
 }
 
+.post-content .kg-file-card .kg-file-card-contents {
+    max-width: 65%;
+    word-break: break-all;
+}
+
 .post-content .kg-audio-card svg {
     fill: var(--color-three);
 }
@@ -847,7 +852,7 @@
     width: calc(100vw - 40px);
     height: 100%;
     max-height: 300px;
-    margin-left: calc(-50vw + 20px);
+    margin-left: calc(-50vw + clamp(1.4rem, 1.058rem + 0.759vw, 2rem));
     content: "";
     pointer-events: none;
     opacity: 1;
