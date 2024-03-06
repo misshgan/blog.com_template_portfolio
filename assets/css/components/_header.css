@@ -1,10 +1,6 @@
 .header {
     nav {
         position: relative;
-
-        @media (max-width:1024px) {
-            display: none;
-        }
     }
 
     &__logo {
@@ -17,12 +13,41 @@
 
         font-size: 2.8rem;
 
+        @media (max-width:1024px) {
+            position: static;
+            top: unset;
+            left: unset;
+            transform: translate(0);
+            height: 5.4rem;
+        }
+
         img {
             height: 100%;
+            
+            @media (max-width:1024px) {
+                height: 5.4rem;
+            }
         }
     }
 
     &__buttons {
         column-gap: 2rem;
+    }
+
+    &__buttons-desktop {
+        column-gap: 2rem;
+
+        @media (max-width:1024px) {
+            display: none;
+        }
+    }
+
+    &__mobile-target {
+        display: none;
+        cursor: pointer;
+
+        @media (max-width:1024px) {
+            display: block;
+        }
     }
 }
