@@ -12,7 +12,7 @@ export function handleHomeHeroSwiper() {
 
         direction: "horizontal",
         spaceBetween: 10,
-        slidesPerView: 1.6,
+        slidesPerView: 1.2,
 
         breakpoints: {
             1024: {
