@@ -17,16 +17,25 @@
     </div>
     <div class="mobile-menu__main">
         <div class="mobile-menu__list">
-            {{navigation classes='navigation--is-mobile'}}
+            <ul class="navigation flex navigation--is-mobile">
+                {{#foreach navigation}}
+                    <li class="{{link_class for=(url) class=(concat "nav-" slug)}}{{#match label.[0] "-"}} is-subitem{{/match}}" 
+                        data-label="{{label}}" data-length="{{label.length}}">
+                        <a title="{{label}}" href="{{url absolute="true"}}">
+                        <span>{{label}}</span>
+                        </a>
+                    </li>
+                {{/foreach}}
+            </ul>
             {{navigation classes='navigation--is-mobile-secondary' type='secondary'}}
         </div>
         <div class="mobile-menu__buttons flex items-center">
             {{#if @member}}
-                <a href="javascript:" data-members-signout class="button button--minimal">Sign out</a>
-                <a href="/account/" class="button button--minimal">Account</a>
+                <a href="javascript:" data-members-signout class="button button--transparent">Sign out</a>
+                <a href="/account/" class="button">Account</a>
             {{else}}
                 <a href="/sign-in/" class="button button--transparent">Sign in</a>
-                <a href="/sign-up/" class="button button button--header">Sign up</a>
+                <a href="/sign-up/" class="button">Sign up</a>
             {{/if}}
         </div>
     </div>
