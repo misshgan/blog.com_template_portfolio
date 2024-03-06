@@ -1,0 +1,33 @@
+<div class="mobile-menu">
+    <div class="mobile-menu__header flex items-center content-space-b">
+        <a href="/">
+            {{#if @site.logo}}
+                {{> components/image
+                    image_type='site'
+                    image_url=@site.logo
+                    size_xs=true
+                    size_s=true
+                    loading='eager'
+                }}
+            {{else}}
+                <span class="site-name">{{@site.title}}</span>
+            {{/if}}
+        </a>
+        <div class="mobile-menu__target js-mobile-menu-target">{{> icons/close}}</div>
+    </div>
+    <div class="mobile-menu__main">
+        <div class="mobile-menu__list">
+            {{navigation classes='navigation--is-mobile'}}
+            {{navigation classes='navigation--is-mobile-secondary' type='secondary'}}
+        </div>
+        <div class="mobile-menu__buttons flex items-center">
+            {{#if @member}}
+                <a href="javascript:" data-members-signout class="button button--minimal">Sign out</a>
+                <a href="/account/" class="button button--minimal">Account</a>
+            {{else}}
+                <a href="/sign-in/" class="button button--transparent">Sign in</a>
+                <a href="/sign-up/" class="button button button--header">Sign up</a>
+            {{/if}}
+        </div>
+    </div>
+</div>
