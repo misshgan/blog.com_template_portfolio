@@ -33,6 +33,15 @@
     background-color: #F6F6F6;
     column-gap: 12rem;
 
+    @media (max-width:768px) {
+        column-gap: 4rem;
+    }
+
+    @media (max-width:600px) {
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
     &:not(.subscription-info--additional) {
         border-top: 1px solid #CDCDCD;
     }
