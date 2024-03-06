@@ -9,14 +9,10 @@
 
     background-color: var(--color-white);
     z-index: 100;
-    padding: 2.6rem;
+    padding: clamp(1.5rem,1.215rem + .633vw,2rem) clamp(1.4rem,1.058rem + .759vw,2rem);
 
     display: none;
     visibility: hidden;
-
-    @media (max-width:600px) {
-        padding: 1.5rem 1.4rem;
-    }
 
     &.active {
         display: block;
@@ -40,16 +36,7 @@
     }
 
     &__target {
-        padding: 2.6rem;
-        cursor: pointer;
-        position: absolute;
-        top: 0;
-        right: 0;
 
-        @media (max-width:768px) {
-            position: static;
-            padding: 0;
-        }
     }
 
     &__list {
