@@ -23,13 +23,13 @@
         {{#if @site.navigation}}
             <div class="footer__column flex flex-col">
                 <h4 class="footer__column-title">{{t 'Navigation'}}</h4>
-                {{> navigation classes='navigation--is-footer' is_footer=true}}
+                {{> navigation classes='navigation--is-footer'}}
             </div>
         {{/if}}
         {{#if @site.secondary_navigation}}
              <div class="footer__column flex flex-col">
-                <h4 class="footer__column-title">&nbsp;</h4>
-                {{navigation classes='navigation--is-footer' type="secondary" is_footer=true}}
+                <h4 class="footer__column-title">{{t 'See more'}}</h4>
+                {{navigation classes='navigation--is-footer' type="secondary"}}
             </div>
         {{/if}}
         <div class="footer__column flex flex-col">
